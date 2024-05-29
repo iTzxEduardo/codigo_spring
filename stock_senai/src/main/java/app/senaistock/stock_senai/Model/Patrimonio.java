@@ -13,22 +13,34 @@ public class Patrimonio implements Serializable{
     private String status_patrimonio;
 
     // Foreign key
-     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_sala")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_sala")
+    // private Salas id_sala;
+	@ManyToOne
+    @JoinColumn(name = "id_sala", nullable = false)
     private Salas id_sala;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_bloco")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_bloco")
+    // private Blocos id_bloco;
+	@ManyToOne
+    @JoinColumn(name = "id_bloco", nullable = false)
     private Blocos id_bloco;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_area")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_area")
+    // private Areas id_area;
+	@ManyToOne
+    @JoinColumn(name = "id_area", nullable = false)
     private Areas id_area;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_categoria")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_categoria")
+    // private Categorias id_categoria;
+	@ManyToOne
+    @JoinColumn(name = "id_categoria", nullable = false)
     private Categorias id_categoria;
     
     //Campo preenchido automaticamente com Hora Local 

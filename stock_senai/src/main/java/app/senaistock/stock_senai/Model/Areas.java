@@ -10,7 +10,6 @@ public class Areas implements Serializable {
     private Long id_area;
     private String nome_area;
 
-    // sem foreign keys
 
     // metodos
     public Long getId_area() {

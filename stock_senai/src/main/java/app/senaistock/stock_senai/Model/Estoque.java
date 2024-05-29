@@ -14,12 +14,20 @@ public class Estoque implements Serializable {
     private String observacao;
     private String data_registro_material;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_categoria")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_categoria")
+    // private Categorias id_categoria;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", nullable = false)
     private Categorias id_categoria;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_area")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_area")
+    // private Areas id_area;
+
+    @ManyToOne
+    @JoinColumn(name = "id_area", nullable = false)
     private Areas id_area;
 
     // metodos

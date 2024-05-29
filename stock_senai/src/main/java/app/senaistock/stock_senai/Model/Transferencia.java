@@ -13,9 +13,13 @@ public class Transferencia implements Serializable{
     private String sala_remetente;
 
 
-    // Foreign key
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sala_destino")
+    // // Foreign key
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "sala_destino")
+    // private Salas id_sala;
+
+    @ManyToOne
+    @JoinColumn(name = "id_sala", nullable = false)
     private Salas id_sala;
 
 

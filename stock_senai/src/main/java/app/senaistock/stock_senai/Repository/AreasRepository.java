@@ -4,7 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import app.senaistock.stock_senai.Model.Areas;
 
-public interface AreasRepository extends CrudRepository<Areas, Long>{{
-    
-    AfindByIdArea(Long id_area);rea);
+public interface AreasRepository extends CrudRepository<Areas, Long>{
+
 }

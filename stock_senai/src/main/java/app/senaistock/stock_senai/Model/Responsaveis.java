@@ -13,8 +13,12 @@ public class Responsaveis implements Serializable {
     private String nome_responsavel;
     private String senha_responsavel;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cargo_responsavel")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "cargo_responsavel")
+    // private Cargos id_cargo;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cargo", nullable = false)
     private Cargos id_cargo;
 
     // metodos

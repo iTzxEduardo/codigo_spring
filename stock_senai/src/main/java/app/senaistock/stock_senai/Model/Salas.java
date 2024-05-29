@@ -13,17 +13,26 @@ public class Salas implements Serializable{
     private String nome_sala;
     
     // FOREIGN KEY
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_bloco")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_bloco")
+    // private Blocos id_bloco;
+	@ManyToOne
+    @JoinColumn(name = "id_bloco", nullable = false)
     private Blocos id_bloco;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_area")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_area")
+    // private Areas id_area;
+	@ManyToOne
+    @JoinColumn(name = "id_area", nullable = false)
     private Areas id_area;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_responsavel")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "id_responsavel")
+    // private Responsaveis id_responsavel;
+	@ManyToOne
+    @JoinColumn(name = "id_responsavel", nullable = false)
     private Responsaveis id_responsavel;
 
 	public Long getId_sala() {
