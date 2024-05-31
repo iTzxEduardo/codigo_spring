@@ -9,9 +9,9 @@ public class Responsaveis implements Serializable {
     // atributos
     @Id
     private Long id_responsavel;
-    private String email_responsavel;
+    private String email;
     private String nome_responsavel;
-    private String senha_responsavel;
+    private String senha;
 
     // @ManyToOne(fetch = FetchType.LAZY)
     // @JoinColumn(name = "cargo_responsavel")
@@ -23,11 +23,11 @@ public class Responsaveis implements Serializable {
 
     // metodos
     public String getEmail_responsavel() {
-        return email_responsavel;
+        return email;
     }
 
-    public void setEmail_responsavel(String email_responsavel) {
-        this.email_responsavel = email_responsavel;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNome_responsavel() {
@@ -54,12 +54,12 @@ public class Responsaveis implements Serializable {
 		this.id_responsavel = id_responsavel;
 	}
 
-	public String getSenha_responsavel() {
-		return senha_responsavel;
+	public String getSenha() {
+		return senha;
 	}
 
-	public void setSenha_responsavel(String senha_responsavel) {
-		this.senha_responsavel = senha_responsavel;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
     
     
