@@ -1,13 +1,11 @@
 package app.senaistock.stock_senai.Repository;
 
+import java.util.Optional;
+
 import org.springframework.data.repository.CrudRepository;
 
 import app.senaistock.stock_senai.Model.Cargos;
 
-/**
- * CargosRepository
- */
 public interface CargosRepository extends CrudRepository<Cargos, Long> {
-    // Cargos findById_cargo(Long id_cargo);
-            
+    Optional<Cargos> findById(long id);
 }

@@ -18,6 +18,10 @@
         <h2>Bem-vindo(a), <span th:text="${nome}"></span>!</h2>
     </div>
 
+    <div class="cargo">
+        <h2>Cargo: <span th:text="${cargo}"></span></h2>
+    </div>
+
     <form action="/logout-responsavel" method="get">
         <button type="submit" class="logout"><i class="fas fa-sign-out-alt"></i>Logout</button>
     </form>

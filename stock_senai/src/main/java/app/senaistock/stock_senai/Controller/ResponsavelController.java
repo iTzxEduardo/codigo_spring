@@ -1,22 +1,25 @@
 package app.senaistock.stock_senai.Controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
+import app.senaistock.stock_senai.Model.Cargos;
 import app.senaistock.stock_senai.Model.Responsaveis;
+import app.senaistock.stock_senai.Repository.CargosRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ResponsavelController {
     @Autowired
-    private ResponsaveisRepository repository;
+    private ResponsaveisRepository responsavelRepository;
+
+    @Autowired
+    private CargosRepository cargoRepository;
 
     boolean acessoResponsavel = false; //Definir o estado do login do usuário (logado/não logado)
 
@@ -26,9 +29,17 @@ public class ResponsavelController {
     public String acessoPaginaInternaResponsavel(Model model) {
         String vaiPara = "";
         String responsavelEmail = email;
-        Responsaveis responsaveis = repository.findByEmail(responsavelEmail);
+        Responsaveis responsaveis = responsavelRepository.findByEmail(responsavelEmail);
         if (acessoResponsavel) {
             model.addAttribute("nome", responsaveis.getNome_responsavel());
+
+            Cargos cargo = responsaveis.getId_cargo();
+            if (cargo != null) {
+                model.addAttribute("cargo", cargo.getNome_cargo());
+            } else {
+                model.addAttribute("cargo", "Cargo não encontrado!");
+            }
+            
             vaiPara = "interna/interna-responsavel";
         } else {
             vaiPara = "redirect:/login-responsavel";
@@ -40,8 +51,8 @@ public class ResponsavelController {
     public String acessoResponsavel(@RequestParam String email, @RequestParam String senha, Model model) {
         this.email = email;
         try{
-            boolean verificaEmail = repository.existsByEmail(email);
-            boolean verificaSenha = repository.findByEmail(email).getSenha().equals(senha);
+            boolean verificaEmail = responsavelRepository.existsByEmail(email);
+            boolean verificaSenha = responsavelRepository.findByEmail(email).getSenha().equals(senha);
             String url = "";
             if (verificaEmail && verificaSenha) {
                 acessoResponsavel = true;
