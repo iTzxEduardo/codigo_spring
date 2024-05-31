@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import app.senaistock.stock_senai.Model.Cargos;
 import app.senaistock.stock_senai.Model.Responsaveis;
-import app.senaistock.stock_senai.Repository.CargosRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,9 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ResponsavelController {
     @Autowired
     private ResponsaveisRepository responsavelRepository;
-
-    @Autowired
-    private CargosRepository cargoRepository;
 
     boolean acessoResponsavel = false; //Definir o estado do login do usuário (logado/não logado)
 
