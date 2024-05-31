@@ -9,16 +9,16 @@ public class Cargos implements Serializable {
     // atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_cargo;
+    private Long id;
     private String nome_cargo;
     // sem foreign key
 
     // metodos
-    public Long getId_cargo() {
-        return id_cargo;
+    public Long getId() {
+        return id;
     }
-    public void setId_cargo(Long id_cargo) {
-        this.id_cargo = id_cargo;
+    public void setId_cargo(Long id) {
+        this.id = id;
     }
     public String getNome_cargo() {
         return nome_cargo;
