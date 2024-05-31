@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Responsável</title>
+</head>
+
+<body>
+    <header>
+        <h1>Página Interna Responsável</h1>
+    </header>
+
+    <div class="welcome">
+        <h2>Bem-vindo(a), <span th:text="${nome}"></span>!</h2>
+    </div>
+
+    <form action="/logout-responsavel" method="get">
+        <button type="submit" class="logout"><i class="fas fa-sign-out-alt"></i>Logout</button>
+    </form>
+
+</body>
+
+</html>
