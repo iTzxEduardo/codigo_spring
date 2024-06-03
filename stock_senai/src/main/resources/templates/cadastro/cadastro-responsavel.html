@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Responsáveis</title>
+</head>
+
+<body>
+    <div class="container">
+        <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
+        <div class="row justify-content-center">
+            <div th:if="${mensagem}">
+                <p th:text="${mensagem}" th:class="${error} ? 'mensagem error' : 'mensagem'"></p>
+            </div>
+            <div class="col-md-6">
+                <div class="register-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Cadastro de Responsáveis</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="/cadastro-responsavel" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Email" name="email">
+                                    <span class="error-message" style="display: none;">Insira o Email</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nome" name="nome_responsavel">
+                                    <span class="error-message" style="display: none;">Digite o Nome</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Senha" name="senha">
+                                    <span class="error-message" style="display: none;">Informe a Senha</span>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="id_cargo">
+                                        <option value="" disabled selected>Selecione um cargo</option>
+                                        <option th:each="cargo : ${cargos}" th:value="${cargo.id}" th:text="${cargo.nome_cargo}"></option>
+                                    </select>
+                                    <span class="error-message" style="display: none;">Insira um cargo</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="foto">Selecionar Foto:</label>
+                                    <input type="file" id="foto" name="foto" accept="image/*">
+                                </div>                                
+                                <button type="submit" class="btn btn-block btn-register"><i class="fas fa-user-plus"></i>Cadastrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

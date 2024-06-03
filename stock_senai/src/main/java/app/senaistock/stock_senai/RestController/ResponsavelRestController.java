@@ -14,9 +14,6 @@ import app.senaistock.stock_senai.Model.Responsaveis;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
 
 
 @RestController
