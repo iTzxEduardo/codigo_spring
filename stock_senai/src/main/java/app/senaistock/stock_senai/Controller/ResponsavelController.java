@@ -122,6 +122,15 @@ public class ResponsavelController {
         return "redirect:/login-responsavel";
     }
 
+    @GetMapping("/interna-adm")
+    public String acessoPaginaInternaAdm(Model model) {
+        if (acessoResponsavel && "adm@senai.com".equals(email)) {
+            return "interna/interna-adm";
+        } else {
+            return "redirect:/interna-responsavel";
+        }
+    }
+
     
     
 }
