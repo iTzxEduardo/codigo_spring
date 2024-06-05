@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import app.senaistock.stock_senai.Model.Cargos;
 import app.senaistock.stock_senai.Model.Salas;
+import app.senaistock.stock_senai.Model.Areas;
 import app.senaistock.stock_senai.Model.Responsaveis;
 import app.senaistock.stock_senai.Repository.CargosRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
@@ -105,7 +106,10 @@ public class ResponsavelController {
         if (acessoResponsavel) {
             Salas salasCadastradas = responsaveis.getId();
             model.addAttribute("salasCadastradas", salasCadastradas);
-
+            Salas sala = responsaveis.getId();
+            Areas area = sala.getId_area();
+            model.addAttribute("sala", sala);
+            model.addAttribute("area", area.getNome_area());
             return "interna/salas-responsaveis";
         } else {
             return "redirect:/login-responsavel";

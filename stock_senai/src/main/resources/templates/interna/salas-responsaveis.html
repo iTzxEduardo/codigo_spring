@@ -19,15 +19,16 @@
             <tr>
                 <th>ID Sala</th>
                 <th>Nome Sala</th>
-                <!-- <th>Area</th>
-                <th>Bloco</th> -->
+                <th>Área</th>
+                <th>Bloco</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="salas: ${salasCadastradas}">
                 <td><span th:text="${salas.id_sala}"></span></td>
                 <td><span th:text="${salas.nome_sala}"></span></td>
-                <!-- <td><span th:each="area: ${sala.areas}" th:text="${area.nome}"></span></td> -->
+                <td><span th:text="${salas.id_area.nome_area}"></span></td>
+                <td><span th:text="${salas.id_bloco.nome_bloco}"></span></td>
             </tr>
         </tbody>
     </table>
