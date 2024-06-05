@@ -23,6 +23,10 @@ public class Responsaveis implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_cargo", nullable = false)
     private Cargos id_cargo;
+
+    @ManyToOne
+    @JoinColumn(name = "id_sala", nullable = false)
+    private Salas id;
 }
 
 

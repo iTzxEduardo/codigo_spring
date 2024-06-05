@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org"></html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salas</title>
+</head>
+
+<body>
+
+    <header>
+    <h1>Salas Responsáveis</h1>
+    </header>
+
+    <div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID Sala</th>
+                <th>Nome Sala</th>
+                <!-- <th>Area</th>
+                <th>Bloco</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="salas: ${salasCadastradas}">
+                <td><span th:text="${salas.id_sala}"></span></td>
+                <td><span th:text="${salas.nome_sala}"></span></td>
+                <!-- <td><span th:each="area: ${sala.areas}" th:text="${area.nome}"></span></td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+
+</html>

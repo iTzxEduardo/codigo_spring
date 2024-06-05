@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import app.senaistock.stock_senai.Model.Cargos;
+import app.senaistock.stock_senai.Model.Salas;
+import app.senaistock.stock_senai.Model.Areas;
 import app.senaistock.stock_senai.Model.Responsaveis;
+import app.senaistock.stock_senai.Repository.AreasRepository;
 import app.senaistock.stock_senai.Repository.CargosRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Controller
@@ -25,9 +27,13 @@ public class ResponsavelController {
     @Autowired
     private CargosRepository cargosRepository;
 
+    @Autowired
+    private AreasRepository areasRepository;
+
     boolean acessoResponsavel = false; //Definir o estado do login do usuário (logado/não logado)
 
     private String email;
+    
 
     @GetMapping("/interna-responsavel")
     public String acessoPaginaInternaResponsavel(Model model) {
@@ -50,6 +56,7 @@ public class ResponsavelController {
         }
         return vaiPara;
     }
+    
 
     @PostMapping("acesso-responsavel")
     public String acessoResponsavel(@RequestParam String email, @RequestParam String senha, Model model) {
@@ -96,10 +103,26 @@ public class ResponsavelController {
         return vaiPara;
     }
 
+    // Pegar as salas em que o responsável é responsável
+    @GetMapping("/salas-responsaveis")
+    public String listarSalasResponsavel(Model model) {
+        Responsaveis responsaveis = responsavelRepository.findByEmail(email);
+        if (acessoResponsavel) {
+            Salas salasCadastradas = responsaveis.getId();
+            model.addAttribute("salasCadastradas", salasCadastradas);
+
+            return "interna/salas-responsaveis";
+        } else {
+            return "redirect:/login-responsavel";
+        }
+    }
+
     @GetMapping("/logout-responsavel")
     public String logoutResponsavel() {
         acessoResponsavel = false;
         return "redirect:/login-responsavel";
     }
+
+    
     
 }

@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 public class Salas implements Serializable{
     @Id
-    private Long id_sala;
+    private Long id;
     private String nome_sala;
     
 	@ManyToOne
@@ -23,8 +23,4 @@ public class Salas implements Serializable{
 	@ManyToOne
     @JoinColumn(name = "id_area", nullable = false)
     private Areas id_area;
-
-	@ManyToOne
-    @JoinColumn(name = "id_responsavel", nullable = false)
-    private Responsaveis id_responsavel;
 }
