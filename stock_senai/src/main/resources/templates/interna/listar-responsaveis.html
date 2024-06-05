@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Responsáveis</title>
+</head>
+<body>
+    <h1>Lista de Responsáveis</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Cargo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="responsavel : ${responsaveis}">
+                <td th:text="${responsavel.id_responsavel}">ID</td>
+                <td th:text="${responsavel.nome_responsavel}">Nome</td>
+                <td th:text="${responsavel.email}">Email</td>
+                <td th:text="${responsavel.id_cargo.nome_cargo}">Cargo</td>
+                <td>
+                    <form th:action="@{/deletar-responsavel/{id}(id=${responsavel.id_responsavel})}" method="post">
+                        <button type="submit">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import app.senaistock.stock_senai.Model.Cargos;
@@ -132,6 +133,35 @@ public class ResponsavelController {
         } else {
             return "redirect:/interna-responsavel";
         }
+    }
+
+
+    // R - Listar os usuários
+    @GetMapping("/listar-responsaveis")
+    public String listarResponsaveis(Model model) {
+        if (acessoResponsavel && "adm@senai.com".equals(email)) {
+            List<Responsaveis> responsaveis = (List<Responsaveis>) responsavelRepository.findAll();
+            model.addAttribute("responsaveis", responsaveis);
+            return "interna/listar-responsaveis";
+        } else {
+            return "redirect:/login-responsavel";
+        }
+    }
+
+    // D - deletar usuário
+    @PostMapping("/deletar-responsavel/{id}")
+    public String deletarResponsavel(@PathVariable("id") Long id, Model model) {
+        if (acessoResponsavel && "adm@senai.com".equals(email)) {
+            try {
+                responsavelRepository.deleteById(id);
+                model.addAttribute("mensagem", "Responsável deletado com sucesso.");
+            } catch (Exception e) {
+                model.addAttribute("mensagem", "Erro ao deletar responsável. Por favor, tente novamente.");
+            }
+        } else {
+            model.addAttribute("mensagem", "Acesso negado.");
+        }
+        return "redirect:/listar-responsaveis";
     }
 
     
