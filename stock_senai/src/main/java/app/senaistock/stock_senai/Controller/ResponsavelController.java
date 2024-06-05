@@ -1,6 +1,5 @@
 package app.senaistock.stock_senai.Controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import app.senaistock.stock_senai.Repository.CargosRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @Controller
 public class ResponsavelController {
     @Autowired
@@ -27,10 +25,9 @@ public class ResponsavelController {
     @Autowired
     private CargosRepository cargosRepository;
 
-    boolean acessoResponsavel = false; //Definir o estado do login do usuário (logado/não logado)
+    boolean acessoResponsavel = false; // Definir o estado do login do usuário (logado/não logado)
 
     private String email;
-    
 
     @GetMapping("/interna-responsavel")
     public String acessoPaginaInternaResponsavel(Model model) {
@@ -52,12 +49,11 @@ public class ResponsavelController {
         }
         return vaiPara;
     }
-    
 
     @PostMapping("acesso-responsavel")
     public String acessoResponsavel(@RequestParam String email, @RequestParam String senha, Model model) {
         this.email = email;
-        try{
+        try {
             boolean verificaEmail = responsavelRepository.existsByEmail(email);
             boolean verificaSenha = responsavelRepository.findByEmail(email).getSenha().equals(senha);
             String url = "";
@@ -65,7 +61,7 @@ public class ResponsavelController {
                 acessoResponsavel = true;
                 if ("adm@senai.com".equals(email)) {
                     url = "redirect:/interna-adm";
-                } else{
+                } else {
                     url = "redirect:/interna-responsavel";
                 }
             } else {
@@ -83,7 +79,8 @@ public class ResponsavelController {
     public String cadastrarResponsavelBanco(Responsaveis responsavel, Model model) {
         try {
             responsavelRepository.save(responsavel); // cadastro um obj responsavel no banco de dados
-            model.addAttribute("mensagem", "O Responsavel " + responsavel.getNome_responsavel() + " foi cadastrado com Sucesso!");
+            model.addAttribute("mensagem",
+                    "O Responsavel " + responsavel.getNome_responsavel() + " foi cadastrado com Sucesso!");
         } catch (Exception e) {
             model.addAttribute("mensagem", "Erro ao cadastrar responsavel. Por favor, tente novamente.");
         }
@@ -135,7 +132,6 @@ public class ResponsavelController {
         }
     }
 
-
     // R - Listar os usuários
     @GetMapping("/listar-responsaveis")
     public String listarResponsaveis(Model model) {
@@ -164,6 +160,7 @@ public class ResponsavelController {
         return "redirect:/listar-responsaveis";
     }
 
+    // U - update do usuário
     
-    
+
 }

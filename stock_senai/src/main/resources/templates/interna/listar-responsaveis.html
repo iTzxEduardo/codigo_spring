@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Lista de Responsáveis</title>
 </head>
+
 <body>
     <h1>Lista de Responsáveis</h1>
     <table>
@@ -25,9 +27,14 @@
                     <form th:action="@{/deletar-responsavel/{id}(id=${responsavel.id_responsavel})}" method="post">
                         <button type="submit">Deletar</button>
                     </form>
+                    <form th:action="@{/atualizar-responsavel/{id}(id=${responsavel.id_responsavel})}" method="get">
+                        <button type="submit">Atualizar</button>
+                    </form>
                 </td>
             </tr>
         </tbody>
     </table>
+
 </body>
+
 </html>
