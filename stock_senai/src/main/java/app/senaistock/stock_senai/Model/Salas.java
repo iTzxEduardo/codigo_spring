@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 public class Salas implements Serializable{
     @Id
-    private Long id;
+    private Long id_sala;
     private String nome_sala;
     
 	@ManyToOne
