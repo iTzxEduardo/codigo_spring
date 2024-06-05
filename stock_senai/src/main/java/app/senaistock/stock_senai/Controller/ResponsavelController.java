@@ -45,7 +45,6 @@ public class ResponsavelController {
             } else {
                 model.addAttribute("cargo", "Cargo não encontrado!");
             }
-            
             vaiPara = "interna/interna-responsavel";
         } else {
             vaiPara = "redirect:/login-responsavel";
@@ -63,7 +62,11 @@ public class ResponsavelController {
             String url = "";
             if (verificaEmail && verificaSenha) {
                 acessoResponsavel = true;
-                url = "redirect:/interna-responsavel";
+                if ("adm@senai.com".equals(email)) {
+                    url = "redirect:/interna-adm";
+                } else{
+                    url = "redirect:/interna-responsavel";
+                }
             } else {
                 model.addAttribute("mensagem", "erro ao realizar o login.");
                 url = "redirect:/login-responsavel";
