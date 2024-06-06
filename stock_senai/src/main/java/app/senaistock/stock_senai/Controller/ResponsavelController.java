@@ -1,6 +1,5 @@
 package app.senaistock.stock_senai.Controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +12,9 @@ import app.senaistock.stock_senai.Model.Cargos;
 import app.senaistock.stock_senai.Model.Responsaveis;
 import app.senaistock.stock_senai.Repository.CargosRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestBody;
+import app.senaistock.stock_senai.Repository.SalasRepository;
 
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ResponsavelController {
@@ -25,7 +24,10 @@ public class ResponsavelController {
     @Autowired
     private CargosRepository cargosRepository;
 
-    boolean acessoResponsavel = false; //Definir o estado do login do usuário (logado/não logado)
+    @Autowired
+    private SalasRepository salasRepository;
+
+    boolean acessoResponsavel = false; // Definir o estado do login do usuário (logado/não logado)
 
     private String email;
 
@@ -43,7 +45,7 @@ public class ResponsavelController {
             } else {
                 model.addAttribute("cargo", "Cargo não encontrado!");
             }
-            
+
             vaiPara = "interna/interna-responsavel";
         } else {
             vaiPara = "redirect:/login-responsavel";
@@ -54,7 +56,7 @@ public class ResponsavelController {
     @PostMapping("acesso-responsavel")
     public String acessoResponsavel(@RequestParam String email, @RequestParam String senha, Model model) {
         this.email = email;
-        try{
+        try {
             boolean verificaEmail = responsavelRepository.existsByEmail(email);
             boolean verificaSenha = responsavelRepository.findByEmail(email).getSenha().equals(senha);
             String url = "";
@@ -76,7 +78,8 @@ public class ResponsavelController {
     public String cadastrarResponsavelBanco(Responsaveis responsavel, Model model) {
         try {
             responsavelRepository.save(responsavel); // cadastro um obj responsavel no banco de dados
-            model.addAttribute("mensagem", "O Responsavel " + responsavel.getNome_responsavel() + " foi cadastrado com Sucesso!");
+            model.addAttribute("mensagem",
+                    "O Responsavel " + responsavel.getNome_responsavel() + " foi cadastrado com Sucesso!");
         } catch (Exception e) {
             model.addAttribute("mensagem", "Erro ao cadastrar responsavel. Por favor, tente novamente.");
         }
@@ -96,10 +99,24 @@ public class ResponsavelController {
         return vaiPara;
     }
 
+    @GetMapping("/listar-salas-p-responsaveis")
+    public String getListaSalaResponsavel(Model model) {
+
+        String url = "";
+        if (responsavelRepository.existsByEmail(email)) {
+            acessoResponsavel = true;
+            Long valor_retornado = responsavelRepository.findByEmail(email).getId_responsavel();
+
+            model.addAttribute("salas", salasRepository.findById_responsavel(valor_retornado));
+            url = "redirect:/interna-view-salas";
+        }
+        return url;
+    }
+
     @GetMapping("/logout-responsavel")
     public String logoutResponsavel() {
         acessoResponsavel = false;
         return "redirect:/login-responsavel";
     }
-    
+
 }
