@@ -25,8 +25,8 @@ public class Responsaveis implements Serializable {
     private Cargos id_cargo;
 
     @ManyToOne
-    @JoinColumn(name = "id_sala", nullable = false)
-    private Salas id;
+    @JoinColumn(name = "idsala", nullable = false)
+    private Salas idsala;
 }
 
 

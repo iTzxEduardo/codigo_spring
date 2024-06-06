@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Lista de Blocos</title>
+</head>
+
+<body>
+    <h1>Lista de Blocos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Bloco</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="bloco : ${blocos}">
+                <td th:text="${bloco.idbloco}">ID</td>
+                <td><a th:href="@{/detalhes-bloco/{id}(id=${bloco.idbloco})}" th:text="${bloco.nome_bloco}">Nome</a></td>
+            </tr>            
+        </tbody>
+    </table>
+
+</body>
+
+</html>

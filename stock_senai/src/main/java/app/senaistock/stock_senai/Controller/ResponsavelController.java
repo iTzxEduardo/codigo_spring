@@ -10,11 +10,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import app.senaistock.stock_senai.Model.Cargos;
+import app.senaistock.stock_senai.Model.Patrimonio;
 import app.senaistock.stock_senai.Model.Salas;
 import app.senaistock.stock_senai.Model.Areas;
+import app.senaistock.stock_senai.Model.Blocos;
 import app.senaistock.stock_senai.Model.Responsaveis;
 import app.senaistock.stock_senai.Repository.CargosRepository;
+import app.senaistock.stock_senai.Repository.PatrimonioRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
+import app.senaistock.stock_senai.Repository.SalasRepository;
+import app.senaistock.stock_senai.Repository.BlocosRepository;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -24,6 +29,15 @@ public class ResponsavelController {
 
     @Autowired
     private CargosRepository cargosRepository;
+
+    @Autowired
+    private BlocosRepository blocosRepository;
+
+    @Autowired
+    private SalasRepository salasRepository;
+
+    @Autowired
+    private PatrimonioRepository patrimonioRepository;
 
     boolean acessoResponsavel = false; // Definir o estado do login do usuário (logado/não logado)
 
@@ -105,13 +119,25 @@ public class ResponsavelController {
     public String listarSalasResponsavel(Model model) {
         Responsaveis responsaveis = responsavelRepository.findByEmail(email);
         if (acessoResponsavel) {
-            Salas salasCadastradas = responsaveis.getId();
+            Salas salasCadastradas = responsaveis.getIdsala();
             model.addAttribute("salasCadastradas", salasCadastradas);
-            Salas sala = responsaveis.getId();
+            Salas sala = responsaveis.getIdsala();
             Areas area = sala.getId_area();
             model.addAttribute("sala", sala);
             model.addAttribute("area", area.getNome_area());
             return "interna/salas-responsaveis";
+        } else {
+            return "redirect:/login-responsavel";
+        }
+    }
+
+    // Listar todos os blocos
+    @GetMapping("/listar-blocos")
+    public String listarBlocos(Model model) {
+        if (acessoResponsavel) {
+            List<Blocos> blocos = (List<Blocos>) blocosRepository.findAll();
+            model.addAttribute("blocos", blocos);
+            return "interna/listar-blocos";
         } else {
             return "redirect:/login-responsavel";
         }
@@ -129,6 +155,36 @@ public class ResponsavelController {
             return "interna/interna-adm";
         } else {
             return "redirect:/interna-responsavel";
+        }
+    }
+
+    // listar salas de acordo com o Bloco clicado
+    @GetMapping("/detalhes-bloco/{id}")
+    public String detalhesBloco(@PathVariable("id") Long id_bloco, Model model) {
+        Blocos bloco = blocosRepository.findById(id_bloco).orElse(null);
+        if (bloco != null) {
+            List<Salas> salasDoBloco = salasRepository.findByIdbloco(bloco);
+            model.addAttribute("bloco", bloco);
+            model.addAttribute("salasDoBloco", salasDoBloco);
+            return "interna/detalhes-bloco";
+        } else {
+            // Lidar com o bloco não encontrado
+            return "redirect:/listar-blocos";
+        }
+    }
+
+    // listar os patrimônios de acordo com a sala clicada
+    @GetMapping("/detalhes-sala/{id}")
+    public String detalhesSala(@PathVariable("id") Long id_sala, Model model) {
+        Salas sala = salasRepository.findById(id_sala).orElse(null);
+        if (sala != null) {
+            List<Patrimonio> patrimoniosDaSala = patrimonioRepository.findByIdsala(sala);
+            model.addAttribute("sala", sala);
+            model.addAttribute("patrimoniosDaSala", patrimoniosDaSala);
+            return "interna/detalhes-sala";
+        } else {
+            // Lidar com o bloco não encontrado
+            return "redirect:/detalhes-bloco";
         }
     }
 
@@ -161,6 +217,5 @@ public class ResponsavelController {
     }
 
     // U - update do usuário
-    
 
 }

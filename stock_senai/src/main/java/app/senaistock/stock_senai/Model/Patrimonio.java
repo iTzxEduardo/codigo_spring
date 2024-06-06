@@ -15,10 +15,11 @@ public class Patrimonio implements Serializable{
     @Id
     private int id_patrimonio;
     private String status_patrimonio;
+    private String nome_patrimonio;
 
 	@ManyToOne
-    @JoinColumn(name = "id_sala", nullable = false)
-    private Salas id_sala;
+    @JoinColumn(name = "idsala", nullable = false)
+    private Salas idsala;
 
 	@ManyToOne
     @JoinColumn(name = "id_bloco", nullable = false)

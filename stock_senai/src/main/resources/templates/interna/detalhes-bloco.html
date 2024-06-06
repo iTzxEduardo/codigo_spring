@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Detalhes do Bloco</title>
+</head>
+
+<body>
+    <h2>Salas do Bloco</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome da Sala</th>
+                <!-- <th>Área</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="sala : ${salasDoBloco}">
+                <td th:text="${sala.id_sala}">ID</td>
+                <td><a th:href="@{/detalhes-sala/{id}(id=${sala.id_sala})}" th:text="${sala.nome_sala}">Nome</a></td>
+                <td th:text="${sala.id_area.nome_area}"></td>
+            </tr>
+            <!-- <tr th:each="sala : ${sala}">
+                <td th:text="${sala.id_sala}">ID</td>
+                <td><a th:href="@{/detalhes-sala/{id}(id=${sala.id_sala})}" th:text="${sala.nome_sala}">Nome</a></td>
+            </tr>    -->
+        </tbody>
+    </table>
+</body>
+
+</html>
