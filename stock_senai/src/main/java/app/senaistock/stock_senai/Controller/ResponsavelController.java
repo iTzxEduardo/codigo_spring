@@ -1,6 +1,7 @@
 package app.senaistock.stock_senai.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,8 @@ import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import app.senaistock.stock_senai.Repository.SalasRepository;
 import app.senaistock.stock_senai.Repository.BlocosRepository;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class ResponsavelController {
@@ -217,5 +220,20 @@ public class ResponsavelController {
     }
 
     // U - update do usuário
+    @PutMapping("/atualizar-responsavel/{id}")
+    public Responsaveis atualizarResponsavel(@PathVariable Long id, @RequestParam String nome, @RequestParam String email,
+            @RequestParam String senha) {
+        Optional<Responsaveis> responsaveis = responsavelRepository.findById(id);
+        if (responsaveis.isPresent()) {
+            Responsaveis responsavel = responsaveis.get();
+            responsavel.setNome_responsavel(nome);
+            responsavel.setEmail(email);
+            responsavel.setSenha(senha);
+
+            return responsavelRepository.save(responsavel);
+        } else {
+            return null;
+        }
+    }
 
 }
