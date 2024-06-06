@@ -14,3 +14,6 @@ public interface ResponsaveisRepository extends CrudRepository<Responsaveis, Lon
 
 
 }
+
+
+

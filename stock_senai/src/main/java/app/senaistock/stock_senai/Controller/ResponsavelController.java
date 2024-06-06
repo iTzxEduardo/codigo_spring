@@ -1,6 +1,7 @@
 package app.senaistock.stock_senai.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,10 @@ import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import app.senaistock.stock_senai.Repository.SalasRepository;
 
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 @Controller
 public class ResponsavelController {
@@ -112,6 +117,36 @@ public class ResponsavelController {
         }
         return url;
     }
+
+
+
+    @PutMapping("upgrade-responsavel/{id}")
+    public Responsaveis putResponsavel(@PathVariable Long id, @RequestBody Responsaveis responsavel) {
+        Optional<Responsaveis> responsavel2 = responsavelRepository.findById(id);
+        
+        if (responsavel2.isPresent()) {
+            responsavel.setId_responsavel(id);
+            return responsavelRepository.save(responsavel);
+        } else {
+            return null;
+        }
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @GetMapping("/logout-responsavel")
     public String logoutResponsavel() {
