@@ -37,7 +37,6 @@ public class ResponsavelRestController {
         return repository.findById(id);
     }
     
-
     @PutMapping("/{id}")
     public Responsaveis putResponsavel(@PathVariable Long id, @RequestBody Responsaveis responsavel) {
         Optional<Responsaveis> responsavel2 = repository.findById(id);

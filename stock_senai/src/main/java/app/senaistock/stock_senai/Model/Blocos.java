@@ -12,6 +12,6 @@ import lombok.Setter;
 public class Blocos implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_bloco;
+    private Long idbloco;
     private String nome_bloco;   
 }

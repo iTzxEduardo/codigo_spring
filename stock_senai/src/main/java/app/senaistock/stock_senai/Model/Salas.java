@@ -17,14 +17,10 @@ public class Salas implements Serializable{
     private String nome_sala;
     
 	@ManyToOne
-    @JoinColumn(name = "id_bloco", nullable = false)
-    private Blocos id_bloco;
+    @JoinColumn(name = "idbloco", nullable = false)
+    private Blocos idbloco;
 
 	@ManyToOne
     @JoinColumn(name = "id_area", nullable = false)
     private Areas id_area;
-
-	@ManyToOne
-    @JoinColumn(name = "id_responsavel", nullable = false)
-    private Responsaveis id_responsavel;
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Detalhes do Bloco</title>
+</head>
+
+<body>
+    <h1 th:text="${sala.nome_sala}">Detalhes do Bloco</h1>
+    <h2>Salas do Bloco</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Patrimonio</th>
+                <th>Data de Registro</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="patrimonio : ${patrimoniosDaSala}">
+                <td th:text="${patrimonio.nome_patrimonio}"></td>
+                <td th:text="${patrimonio.data_registro_patrimonio}"></td>
+                <td th:text="${patrimonio.status_patrimonio}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
