@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import app.senaistock.stock_senai.Model.Cargos;
+import app.senaistock.stock_senai.Model.Estoque;
 import app.senaistock.stock_senai.Model.Patrimonio;
 import app.senaistock.stock_senai.Model.Salas;
 import app.senaistock.stock_senai.Model.Areas;
 import app.senaistock.stock_senai.Model.Blocos;
 import app.senaistock.stock_senai.Model.Responsaveis;
 import app.senaistock.stock_senai.Repository.CargosRepository;
+import app.senaistock.stock_senai.Repository.EstoqueRepository;
 import app.senaistock.stock_senai.Repository.PatrimonioRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import app.senaistock.stock_senai.Repository.SalasRepository;
@@ -41,6 +43,9 @@ public class ResponsavelController {
 
     @Autowired
     private PatrimonioRepository patrimonioRepository;
+
+    @Autowired
+    private EstoqueRepository estoqueRepository;
 
     boolean acessoResponsavel = false; // Definir o estado do login do usuário (logado/não logado)
 
@@ -260,6 +265,18 @@ public class ResponsavelController {
             List<Patrimonio> patrimonios = (List<Patrimonio>) patrimonioRepository.findAll();
             model.addAttribute("patrimonios", patrimonios);
             return "interna/listar-patrimonios";
+        } else {
+            return "redirect:/login-responsavel";
+        }
+    }
+
+    // R - Listar o Estoque
+    @GetMapping("/listar-estoques")
+    public String listarEstoques(Model model) {
+        if (acessoResponsavel) {
+            List<Estoque> estoques = (List<Estoque>) estoqueRepository.findAll();
+            model.addAttribute("estoques", estoques);
+            return "interna/listar-estoques";
         } else {
             return "redirect:/login-responsavel";
         }

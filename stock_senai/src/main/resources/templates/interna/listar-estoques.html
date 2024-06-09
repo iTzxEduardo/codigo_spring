@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Estoque</title>
+</head>
+
+<body>
+    <h1>Estoque</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Data de Registro</th>
+                <th>Quantidade</th>
+                <th>Observação</th>
+                <th>Área</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="estoque : ${estoques}">
+                <td th:text="${estoque.id_estoque}">ID</td>
+                <td th:text="${estoque.nome_material}">Nome</td>
+                <td th:text="${estoque.data_registro_material}">Data</td>
+                <td th:text="${estoque.quantidade}">Quantidade</td>
+                <td th:text="${estoque.observacao}">Observação</td>
+                <td th:text="${estoque.id_area.nome_area}">Área</td>
+                <td th:text="${estoque.id_categoria.nome_categoria}">Categoria</td>
+
+                <!-- <td>
+                    <form th:action="@{/deletar-responsavel/{id}(id=${responsavel.id_responsavel})}" method="post">
+                        <button type="submit">Deletar</button>
+                    </form>
+                    <form th:action="@{/atualizar-responsavel/{id}(id=${responsavel.id_responsavel})}" method="get">
+                        <button type="submit">Atualizar</button>
+                    </form>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
