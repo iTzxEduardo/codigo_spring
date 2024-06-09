@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import app.senaistock.stock_senai.Model.Cargos;
+import app.senaistock.stock_senai.Model.Categorias;
 import app.senaistock.stock_senai.Model.Estoque;
 import app.senaistock.stock_senai.Model.Patrimonio;
 import app.senaistock.stock_senai.Model.Salas;
@@ -18,10 +19,12 @@ import app.senaistock.stock_senai.Model.Areas;
 import app.senaistock.stock_senai.Model.Blocos;
 import app.senaistock.stock_senai.Model.Responsaveis;
 import app.senaistock.stock_senai.Repository.CargosRepository;
+import app.senaistock.stock_senai.Repository.CategoriasRepository;
 import app.senaistock.stock_senai.Repository.EstoqueRepository;
 import app.senaistock.stock_senai.Repository.PatrimonioRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import app.senaistock.stock_senai.Repository.SalasRepository;
+import app.senaistock.stock_senai.Repository.AreasRepository;
 import app.senaistock.stock_senai.Repository.BlocosRepository;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -46,6 +49,12 @@ public class ResponsavelController {
 
     @Autowired
     private EstoqueRepository estoqueRepository;
+
+    @Autowired
+    private AreasRepository areasRepository;
+
+    @Autowired
+    private CategoriasRepository categoriasRepository;
 
     boolean acessoResponsavel = false; // Definir o estado do login do usuário (logado/não logado)
 
@@ -231,7 +240,8 @@ public class ResponsavelController {
 
     // U - update do usuário
     @PutMapping("/atualizar-responsavel/{id}")
-    public Responsaveis atualizarResponsavel(@PathVariable Long id, @RequestParam String nome, @RequestParam String email,
+    public Responsaveis atualizarResponsavel(@PathVariable Long id, @RequestParam String nome,
+            @RequestParam String email,
             @RequestParam String senha) {
         Optional<Responsaveis> responsaveis = responsavelRepository.findById(id);
         if (responsaveis.isPresent()) {
@@ -246,6 +256,7 @@ public class ResponsavelController {
         }
     }
 
+    // cadastrar patrimonio no banco de dados
     @PostMapping("cadastro-patrimonio")
     public String cadastrarPatrimonioBanco(Patrimonio patrimonio, Model model) {
         try {
@@ -258,6 +269,25 @@ public class ResponsavelController {
         return "/cadastro/cadastro-patrimonio";
     }
 
+    @GetMapping("/cadastro-patrimonio")
+    public String acessoPageInternaCadastroPatrimonio(Model model) {
+        String vaiPara = "";
+        if (acessoResponsavel) {
+            List<Areas> areas = (List<Areas>) areasRepository.findAll();
+            model.addAttribute("areas", areas);
+            List<Blocos> blocos = blocosRepository.findAll();
+            model.addAttribute("blocos", blocos);
+            List<Categorias> categorias = (List<Categorias>) categoriasRepository.findAll();
+            model.addAttribute("categorias", categorias);
+            List<Salas> salas = salasRepository.findAll();
+            model.addAttribute("salas", salas);
+            vaiPara = "cadastro/cadastro-patrimonio";
+        } else {
+            vaiPara = "redirect:/login-responsavel";
+        }
+        return vaiPara;
+    }
+
     // R - Listar os patrimônios
     @GetMapping("/listar-patrimonios")
     public String listarPatrimonios(Model model) {
@@ -268,6 +298,19 @@ public class ResponsavelController {
         } else {
             return "redirect:/login-responsavel";
         }
+    }
+
+    // cadastrar estoque no banco de dados
+    @PostMapping("cadastro-estoque")
+    public String cadastrarEstoqueBanco(Estoque estoque, Model model) {
+        try {
+            estoqueRepository.save(estoque); // cadastro um obj patrimonio no banco de dados
+            model.addAttribute("mensagem",
+                    "O Item " + estoque.getNome_material() + " foi cadastrado com Sucesso!");
+        } catch (Exception e) {
+            model.addAttribute("mensagem", "Erro ao cadastrar. Por favor, tente novamente.");
+        }
+        return "/cadastro/cadastro-estoque";
     }
 
     // R - Listar o Estoque

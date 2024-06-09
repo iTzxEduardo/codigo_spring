@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Patrimônios</title>
+</head>
+
+<body>
+    <div class="container">
+        <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
+        <div class="row justify-content-center">
+            <div th:if="${mensagem}">
+                <p th:text="${mensagem}" th:class="${error} ? 'mensagem error' : 'mensagem'"></p>
+            </div>
+            <div class="col-md-6">
+                <div class="register-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Cadastro de Patrimônios</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="/cadastro-patrimonio" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="id do patrimonio" name="id_patrimonio">
+                                    <span class="error-message" style="display: none;">Insira o Id do Patrimônio</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" placeholder="Nome" name="data_registro_patrimonio">
+                                    <span class="error-message" style="display: none;">Digite a data de registro do Patrimônio</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="nome" name="nome_patrimonio">
+                                    <span class="error-message" style="display: none;">Informe o Patrimonio</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="status" name="status_patrimonio">
+                                    <span class="error-message" style="display: none;">Informe o Status do Patrimonio</span>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="id_area">
+                                        <option value="" disabled selected>Selecione uma área</option>
+                                        <option th:each="area : ${areas}" th:value="${area.id_area}" th:text="${area.nome_area}"></option>
+                                    </select>
+                                    <span class="error-message" style="display: none;">Insira uma área</span>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="id_bloco">
+                                        <option value="" disabled selected>Selecione um Bloco</option>
+                                        <option th:each="bloco : ${blocos}" th:value="${bloco.idbloco}" th:text="${bloco.nome_bloco}"></option>
+                                    </select>
+                                    <span class="error-message" style="display: none;">Insira um Bloco</span>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="id_categoria">
+                                        <option value="" disabled selected>Selecione uma Categoria</option>
+                                        <option th:each="categoria : ${categorias}" th:value="${categoria.id_categoria}" th:text="${categoria.nome_categoria}"></option>
+                                    </select>
+                                    <span class="error-message" style="display: none;">Insira uma Categoria</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <select class="form-control" name="idsala">
+                                        <option value="" disabled selected>Selecione uma sala</option>
+                                        <option th:each="sala : ${salas}" th:value="${sala.id_sala}" th:text="${sala.nome_sala}"></option>
+                                    </select>
+                                    <span class="error-message" style="display: none;">Insira uma Sala</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="foto">Selecionar Foto:</label>
+                                    <input type="file" id="foto" name="foto" accept="image/*">
+                                </div>                                
+                                <button type="submit" class="btn btn-block btn-register"><i class="fas fa-user-plus"></i>Cadastrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
