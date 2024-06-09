@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Lista de Patrimônios</title>
+</head>
+
+<body>
+    <h1>Lista de Patrimônios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Status</th>
+                <th>Data de Registro</th>
+                <th>Área</th>
+                <th>Bloco</th>
+                <th>Sala</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="patrimonio : ${patrimonios}">
+                <td th:text="${patrimonio.id_patrimonio}">ID</td>
+                <td th:text="${patrimonio.nome_patrimonio}">Nome</td>
+                <td th:text="${patrimonio.status_patrimonio}">Status</td>
+                <td th:text="${patrimonio.data_registro_patrimonio}">Data</td>
+                <td th:text="${patrimonio.id_area.nome_area}">Área</td>
+                <td th:text="${patrimonio.id_bloco.nome_bloco}">Bloco</td>
+                <td th:text="${patrimonio.idsala.nome_sala}">Sala</td>
+                <td th:text="${patrimonio.id_categoria.nome_categoria}">Categoria</td>
+
+                <!-- <td>
+                    <form th:action="@{/deletar-responsavel/{id}(id=${responsavel.id_responsavel})}" method="post">
+                        <button type="submit">Deletar</button>
+                    </form>
+                    <form th:action="@{/atualizar-responsavel/{id}(id=${responsavel.id_responsavel})}" method="get">
+                        <button type="submit">Atualizar</button>
+                    </form>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

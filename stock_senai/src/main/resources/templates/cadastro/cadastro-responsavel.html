@@ -41,6 +41,15 @@
                                     </select>
                                     <span class="error-message" style="display: none;">Insira um cargo</span>
                                 </div>
+
+                                <div class="form-group">
+                                    <select class="form-control" name="idsala">
+                                        <option value="" disabled selected>Selecione uma sala</option>
+                                        <option th:each="sala : ${salas}" th:value="${sala.id_sala}" th:text="${sala.nome_sala}"></option>
+                                    </select>
+                                    <span class="error-message" style="display: none;">Insira uma Sala</span>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="foto">Selecionar Foto:</label>
                                     <input type="file" id="foto" name="foto" accept="image/*">

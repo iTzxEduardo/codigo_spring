@@ -15,6 +15,7 @@ public class Responsaveis implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_responsavel;
+    @Column(unique = true)
     private String email;
     private String nome_responsavel;
     private String senha;

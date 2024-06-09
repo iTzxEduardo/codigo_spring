@@ -95,6 +95,9 @@ public class ResponsavelController {
     @PostMapping("cadastro-responsavel")
     public String cadastrarResponsavelBanco(Responsaveis responsavel, Model model) {
         try {
+            // pegar o id atual e somar mais um na hora do cadastro, será que vai?
+            Long proximoId = responsavelRepository.findProximoId();
+            responsavel.setId_responsavel(proximoId);
             responsavelRepository.save(responsavel); // cadastro um obj responsavel no banco de dados
             model.addAttribute("mensagem",
                     "O Responsavel " + responsavel.getNome_responsavel() + " foi cadastrado com Sucesso!");
@@ -110,6 +113,8 @@ public class ResponsavelController {
         if (acessoResponsavel) {
             List<Cargos> cargos = cargosRepository.findAll();
             model.addAttribute("cargos", cargos);
+            List<Salas> salas = salasRepository.findAll();
+            model.addAttribute("salas", salas);
             vaiPara = "cadastro/cadastro-responsavel";
         } else {
             vaiPara = "redirect:/login-responsavel";
@@ -236,4 +241,27 @@ public class ResponsavelController {
         }
     }
 
+    @PostMapping("cadastro-patrimonio")
+    public String cadastrarPatrimonioBanco(Patrimonio patrimonio, Model model) {
+        try {
+            patrimonioRepository.save(patrimonio); // cadastro um obj patrimonio no banco de dados
+            model.addAttribute("mensagem",
+                    "O Patrimônio " + patrimonio.getNome_patrimonio() + " foi cadastrado com Sucesso!");
+        } catch (Exception e) {
+            model.addAttribute("mensagem", "Erro ao cadastrar. Por favor, tente novamente.");
+        }
+        return "/cadastro/cadastro-patrimonio";
+    }
+
+    // R - Listar os patrimônios
+    @GetMapping("/listar-patrimonios")
+    public String listarPatrimonios(Model model) {
+        if (acessoResponsavel) {
+            List<Patrimonio> patrimonios = (List<Patrimonio>) patrimonioRepository.findAll();
+            model.addAttribute("patrimonios", patrimonios);
+            return "interna/listar-patrimonios";
+        } else {
+            return "redirect:/login-responsavel";
+        }
+    }
 }
