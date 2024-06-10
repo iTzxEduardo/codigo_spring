@@ -26,5 +26,9 @@ public class SalaController {
     @PostMapping
     public Salas createAtivo(@RequestBody Salas ativo) {
         return repository.save(ativo);
-    }
+    } 
+
+
+    
+
 }

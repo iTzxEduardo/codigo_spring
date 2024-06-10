@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import app.senaistock.stock_senai.Model.Cargos;
 import app.senaistock.stock_senai.Model.Categorias;
@@ -24,7 +23,6 @@ import app.senaistock.stock_senai.Repository.CategoriasRepository;
 import app.senaistock.stock_senai.Repository.PatrimonioRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import app.senaistock.stock_senai.Repository.SalasRepository;
-import app.senaistock.stock_senai.Repository.AreasRepository;
 import app.senaistock.stock_senai.Repository.BlocosRepository;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,19 +35,17 @@ public class ResponsavelController {
     private CargosRepository cargosRepository;
 
     @Autowired
+
     private CategoriasRepository categoriasRepository;
 
-    @Autowired
-    private AreasRepository areasRepository;
 
     @Autowired
     private BlocosRepository blocosRepository;
 
     @Autowired
-    private SalasRepository salasRepository;
-
-    @Autowired
     private PatrimonioRepository patrimonioRepository;
+
+    private SalasRepository salasRepository;
 
     boolean acessoResponsavel = false; // Definir o estado do login do usuário (logado/não logado)
 
