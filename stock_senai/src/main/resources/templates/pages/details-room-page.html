@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Local</title>
+    <link rel="stylesheet" href="/css/rooms/details.css">
+    <link rel="stylesheet" href="/css/fragments/loadingStyle.css">
+    <link rel="stylesheet" href="/css/fragments/styleHeader.css">
+    <link rel="stylesheet" href="/css/fragments/styleFooter.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/Public/logo/senai_icon.png">
+</head>
+
+<body>
+    
+    <div class="div-preloader" id="preloader-id">
+        <span class="span-effect span-1">S</span>
+        <span class="span-effect span-2">E</span>
+        <span class="span-effect span-3">N</span>
+        <span class="span-effect span-4">A</span>
+        <span class="span-effect span-5">I</span>
+    </div>
+    
+    <header class="header-section">
+        <div class="header-main-section">
+            <div class="div-main-left-section">
+                <div class="div-menu-button">
+                    <button id="toggle-button" class="arrow-menu-btn"><i id="arrow-icon"
+                            class="fas fa-regular fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="div-main-right-section">
+                <div class="div-search-input">
+                    <input type="search" name="search-input" id="search-input-id" placeholder="Pesquisar">
+                </div>
+                <div class="div-buttons-section">
+                    <button class="notification-icon-btn"><i class="fas fa-regular fa-bell"></i></button>
+                </div>
+                <div class="div-senai-logo">
+                    <img src="/Public/senai.png" alt="senai-logo">
+                </div>
+            </div>
+        </div>
+        <div id="sidebar" class="header-side-menu">
+            <div class="header-side-bar-top-section">
+                <div class="div-links-buttons">
+                    <button class="btn-home"><i class="fas fa-solid fa-list"></i>Home</button>
+                    <button class="btn-profile"><i class="fas fa-solid fa-user"></i>Perfil</button>
+                    <button class="btn-about-us"><img src="/Public/icons/circle-exclamation-solid.svg"
+                            width="20px" style="margin-right: 10px;" alt="img-exclamation">Sobre
+                        Nós</button>
+                    <button class="btn-exit"><img src="/Public/icons/right-from-bracket-solid.svg" width="20px"
+                            style="margin-right: 10px;" alt="img-exit">
+                        Sair</button>
+                </div>
+            </div>
+            <div class="header-side-bar-bottom-section">
+                <div class="div-conf-button">
+                    <button><img src="/Public/icons/gear-solid.svg" width="20px" style="margin-right: 10px;"
+                            alt="img-gear">Configurações</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main-section">
+        <div class="details-info-section">
+            <div class="div-details-info-top">
+                <div class="div-details-rooms-img-section">
+                    <div class="div-sidebar-img">
+                        <div class="div-img-room-mini selected-img">
+                            <img src="" alt="img-room-1">
+                        </div>
+                        <div class="div-img-room-mini">
+                            <img src="" alt="img-room-2">
+                        </div>
+                        <div class="div-img-room-mini">
+                            <img src="" alt="img-room-3">
+                        </div>
+                    </div>
+                    <div class="div-room-img-section">
+                        <div class="div-img-room">
+                            <img src="" id="main-img" alt="img-room-1">
+                        </div>
+                    </div>
+                </div>
+                <div class="div-details-info-section">
+                    <div class="div-details-info-title">
+                        <h1>Sala de Aula</h1>
+                    </div>
+                    <div class="div-details-info">
+                        <div class="div-info">
+                            <div class="div-info-list">
+                                <ul>
+                                    <li>Responsável: </li>
+                                    <li>Qtde. de Patrimonios (Total): </li>
+                                    <li>Área: </li>
+                                    <li>
+                                        Categorias:<br>
+                                        <select>
+                                            <option value="">Todas as Categorias</option>
+                                            <select>
+                                               <!--  <option value="">Todas as Categorias</option> -->
+                                                <option th:each="categoria : ${categorias}" th:value="${categoria.id_categoria}" th:text="${categoria.nome_categoria}"></option>
+                                            </select>
+                                            
+                                            <!-- Outras opções -->
+                                        </select>
+                                           <!--   <option>Caixa de Som</option>
+                                            <option>Mesas</option>
+                                            <option>Cadeiras</option>
+                                            <option>Armários</option>
+                                            <option>Projetor</option>
+                                            <option>Lousa</option>
+                                        </select> -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="div-info-text">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, ipsum minus esse
+                                    ab sunt delectus laboriosam nihil minima soluta dolorem nulla doloremque commodi
+                                    quaerat, voluptatem natus molestias. Voluptatibus, ratione fugiat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-details-info-button-section">
+                        <div class="details-button">
+                            <button id="act-table-maint-btn" class="wrench-btn"><i
+                                    class="fas fa-solid fa-wrench"></i></button>
+                            <button id="act-table-transf-btn" class="envelope-btn"><i
+                                    class="fas fa-regular fa-envelope"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div-details-info-bottom">
+                <div class="div-table-info">
+                    <div class="div-table-maintenance" id="table-maintenance-id">
+                        <div class="div-table-maint-title">
+                            <h2>Equipamentos em Manutenção</h2>
+                        </div>
+                        <div class="div-table">
+                            <table>
+                                <thead>
+                                    <th>ID</th>
+                                    <th>Categoria</th>
+                                    <th>Status</th>
+                                </thead>
+                                <tbody>
+                                    <td>1</td>
+                                    <td>Computador</td>
+                                    <td>Manutenção</td>
+                                </tbody>
+                                <tbody>
+                                    <td>2</td>
+                                    <td>Mesa</td>
+                                    <td>Manutenção</td>
+                                </tbody>
+                                <tbody>
+                                    <td>3</td>
+                                    <td>Projetor</td>
+                                    <td>Manutenção</td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="div-table-transfer" id="table-transfer-id">
+                        <div class="div-table-transf-title">
+                            <h2>Equipamentos Transferidos</h2>
+                        </div>
+                        <div class="div-table">
+                            <table>
+                                <thead>
+                                    <th>ID</th>
+                                    <th>Categoria</th>
+                                    <th>Status</th>
+                                </thead>
+                                <tbody>
+                                    <td>3</td>
+                                    <td>Cadeira</td>
+                                    <td>Transferida</td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-section">
+        <div class="footer-info-section">
+            <span class="text-copyright">Copyright SENAI 2024 © Todos os direitos reservados.</span>
+        </div>
+    </footer>
+
+</body>
+
+<script src="../../JS/fragments/headerScript.js"></script>
+<script src="../../JS/pages/detailsScript.js"></script>
+<script src="../../JS/fragments/loadingScript.js"></script>
+
+</html>

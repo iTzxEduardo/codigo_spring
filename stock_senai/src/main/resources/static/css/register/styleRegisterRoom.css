@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --standart-font: "Poppins", sans-serif;
+    --block-color: #E9E9E9;
+    --block-color-effect: #FD2929;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.main-section {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: var(--standart-font);
+}
+
+.div-room-form-section {
+    width: 65%;
+    height: 785px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.div-room-form-section .div-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 60vh;
+    margin: 10px;
+}
+
+.div-room-form-section .div-form .div-room-form-title h1 {
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.div-room-form-section .div-form .div-form-info {
+    margin-bottom: 25px;
+}
+
+.div-room-form-section .div-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.div-room-form-section .div-form form .div-form-input-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.div-room-form-section .div-form form .div-form-input-section .div-input-part {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.div-room-form-section .div-form form .div-form-input-section .div-input-part input {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.div-room-form-section .div-form form .div-form-input-section .div-input-part select{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.div-room-form-section .div-form form .div-form-input-section .div-form-section-left, .div-form-section-right{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.div-room-form-section .div-form form .div-form-submit-btn-section {
+    width: 50%;
+    padding: 20px;
+}
+
+.div-room-form-section .div-form form .div-form-submit-btn-section input {
+    width: 100%;
+    height: 5vh;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.div-room-form-section .div-form form .div-form-submit-btn-section input:hover {
+    background-color: rgb(184, 0, 0);
+}

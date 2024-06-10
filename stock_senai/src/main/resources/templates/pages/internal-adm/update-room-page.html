@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Sala</title>
+    <link rel="stylesheet" href="../../../CSS/register/styleRegisterRoom.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/loadingStyle.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/styleHeader.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/styleFooter.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../../TEMPLATES/logo/senai_icon.png">
+</head>
+
+<body>
+
+    <div class="div-preloader" id="preloader-id">
+        <span class="span-effect span-1">S</span>
+        <span class="span-effect span-2">E</span>
+        <span class="span-effect span-3">N</span>
+        <span class="span-effect span-4">A</span>
+        <span class="span-effect span-5">I</span>
+    </div>
+
+    <header class="header-section">
+        <div class="header-main-section">
+            <div class="div-main-left-section">
+                <div class="div-menu-button">
+                    <button id="toggle-button" class="arrow-menu-btn"><i id="arrow-icon"
+                            class="fas fa-regular fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="div-main-right-section">
+                <div class="div-search-input">
+                    <input type="search" name="search-input" id="search-input-id" placeholder="Pesquisar">
+                </div>
+                <div class="div-buttons-section">
+                    <button class="notification-icon-btn"><i class="fas fa-regular fa-bell"></i></button>
+                </div>
+                <div class="div-senai-logo">
+                    <img src="../../../TEMPLATES/senai.png" alt="senai-logo">
+                </div>
+            </div>
+        </div>
+        <div id="sidebar" class="header-side-menu">
+            <div class="header-side-bar-top-section">
+                <div class="div-links-buttons">
+                    <button class="btn-home"><i class="fas fa-solid fa-list"></i>Home</button>
+                    <button class="btn-profile"><i class="fas fa-solid fa-user"></i>Perfil</button>
+                    <button class="btn-about-us"><img src="../../../TEMPLATES/icons/circle-exclamation-solid.svg"
+                            width="20px" style="margin-right: 10px;" alt="img-exclamation">Sobre
+                        Nós</button>
+                    <button class="btn-exit"><img src="../../../TEMPLATES/icons/right-from-bracket-solid.svg"
+                            width="20px" style="margin-right: 10px;" alt="img-exit">
+                        Sair</button>
+                </div>
+            </div>
+            <div class="header-side-bar-bottom-section">
+                <div class="div-conf-button">
+                    <button><img src="../../../TEMPLATES/icons/gear-solid.svg" width="20px" style="margin-right: 10px;"
+                            alt="img-gear">Configurações</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-section">
+        <div class="div-room-form-section">
+            <div class="div-form">
+                <div class="div-room-form-title">
+                    <h1>Atualizar Salas</h1>
+                </div>
+                <div class="div-form-info">
+                    Preencha os campos abaixo para atualizar a sala
+                </div>
+                <form action="" method="post" id="form-room-id">
+
+                    <div class="div-form-input-section">
+                        <div class="div-form-section-left">
+                            <div class="div-input-part">
+                                <label for="id">ID</label>
+                                <input type="id" name="number" placeholder="Insira o ID">
+                            </div>
+                            <div class="div-input-part">
+                                <label for="nome">Nome da Sala</label>
+                                <input type="text" name="nome" placeholder="Insira o nome">
+                            </div>
+                        </div>
+                        <div class="div-form-section-right">
+                            <div class="div-input-part">
+                                <label for="bloco">Bloco</label>
+                                <select name="bloco">
+                                    <option>Selecione um Bloco</option>
+                                    <option value="Bloco A">Bloco A</option>
+                                    <option value="Bloco B">Bloco B</option>
+                                    <option value="Bloco C">Bloco C</option>
+                                    <option value="Bloco D">Bloco D</option>
+                                </select>
+                            </div>
+                            <div class="div-input-part">
+                                <label for="area">Área</label>
+                                <select name="area">
+                                    <option>Selecione uma Sala</option>
+                                    <option value="Sala de Aula">Sala de Aula</option>
+                                    <option value="Tecnologia da Informação">Tecnologia da Informação</option>
+                                    <option value="Deposíto">Deposíto</option>
+                                    <option value="Oficina">Oficina</option>
+                                </select>
+                            </div>
+                            <div class="div-input-part">
+                                <label for="responsavel">Responsável</label>
+                                <select name="responsavel">
+                                    <option>Selecione um(a) Responsável</option>
+                                    <option value="">Diogo Takamori Barbosa</option>
+                                    <option value="">Bruno A. Moraes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-form-submit-btn-section">
+                        <input type="submit" value="Atualizar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-info-section">
+            <span class="text-copyright">Copyright SENAI 2024 © Todos os direitos reservados.</span>
+        </div>
+    </footer>
+</body>
+
+<script src="../../../JS/fragments/headerScript.js"></script>
+<script src="../../../JS/fragments/loadingScript.js"></script>
+<script src="../../../JS/register/registerRoomScript.js"></script>
+
+</html>

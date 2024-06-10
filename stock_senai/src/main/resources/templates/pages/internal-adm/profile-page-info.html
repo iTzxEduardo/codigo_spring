@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Usuário</title>
+    <link rel="stylesheet" href="../../../CSS/profile/styleProfile.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/internal-adm/styleDltPopUp.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/loadingStyle.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/styleHeader.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/styleFooter.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../../TEMPLATES/logo/senai_icon.png">
+</head>
+
+<body>
+
+    <div class="div-dlt-pop-up" id="dlt-pop-up-id">
+        <div class="div-dlt-pop-up-section">
+            <div class="div-icon-section">
+                <img src="../../../TEMPLATES/icons/triangle-exclamation-solid.svg" alt="alert-icon">
+            </div>
+            <div class="div-pop-up-title">
+                <h1>Aviso!</h1>
+            </div>
+            <div class="div-pop-up-info">
+                <p id="pop-up-text-id">Deseja realmente excluir este usuário? Esta ação é irreversível!</p>
+                <div class="div-loading-points" id="pop-up-loading-id">
+                    <span class="point"></span>
+                    <span class="point"></span>
+                    <span class="point"></span>
+                </div>
+            </div>
+            <div class="div-btn-section">
+                <button class="delete-btn-true" id="delete-btn-true-id">Excluir</button>
+                <button class="cancel-btn" id="cancel-btn-id">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-preloader" id="preloader-id">
+        <span class="span-effect span-1">S</span>
+        <span class="span-effect span-2">E</span>
+        <span class="span-effect span-3">N</span>
+        <span class="span-effect span-4">A</span>
+        <span class="span-effect span-5">I</span>
+    </div>
+
+    <header class="header-section">
+        <div class="header-main-section">
+            <div class="div-main-left-section">
+                <div class="div-menu-button">
+                    <button id="toggle-button" class="arrow-menu-btn"><i id="arrow-icon"
+                            class="fas fa-regular fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="div-main-right-section">
+                <div class="div-search-input">
+                    <input type="search" name="search-input" id="search-input-id" placeholder="Pesquisar">
+                </div>
+                <div class="div-buttons-section">
+                    <button class="notification-icon-btn"><i class="fas fa-regular fa-bell"></i></button>
+                </div>
+                <div class="div-senai-logo">
+                    <img src="../../../TEMPLATES/senai.png" alt="senai-logo">
+                </div>
+            </div>
+        </div>
+        <div id="sidebar" class="header-side-menu">
+            <div class="header-side-bar-top-section">
+                <div class="div-links-buttons">
+                    <button class="btn-home"><i class="fas fa-solid fa-list"></i>Home</button>
+                    <button class="btn-profile"><i class="fas fa-solid fa-user"></i>Perfil</button>
+                    <button class="btn-about-us"><img src="../../../TEMPLATES/icons/circle-exclamation-solid.svg"
+                            width="20px" style="margin-right: 10px;" alt="img-exclamation">Sobre
+                        Nós</button>
+                    <button class="btn-exit"><img src="../../../TEMPLATES/icons/right-from-bracket-solid.svg"
+                            width="20px" style="margin-right: 10px;" alt="img-exit">
+                        Sair</button>
+                </div>
+            </div>
+            <div class="header-side-bar-bottom-section">
+                <div class="div-conf-button">
+                    <button><img src="../../../TEMPLATES/icons/gear-solid.svg" width="20px" style="margin-right: 10px;"
+                            alt="img-gear">Configurações</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção principal -->
+    <main class="main-section">
+        <div class="profile-section">
+            <div class="div-profile-info-section">
+                <div class="div-profile-img-section">
+                    <div class="div-profile">
+                        <img src="../../../TEMPLATES/icons/user-solid.svg" alt="profile-img">
+                    </div>
+                </div>
+                <div class="div-profile-info-text">
+                    <h1>Responsável</h1>
+                    <h3>Professor</h3>
+                </div>
+                <div class="div-user-config-button-section">
+                    <button class="delete-btn" id="delete-btn-id">Excluir</button>
+                    <button class="edit-btn">Editar Informações</button>
+                </div>
+            </div>
+            <!-- Seção da lista de cards -->
+            <div class="div-profile-rooms-list-section">
+                <div class="rooms-list-cards-section">
+                    <div class="rooms-list-top-section">
+                        <div class="div-list-rooms-title">
+                            <h2>Salas do Responsável</h2>
+                        </div>
+                        <div class="input-filter-section">
+                            <input type="search" placeholder="Filtrar">
+                        </div>
+                    </div>
+
+                    <div class="cards-section">
+                        <div class="div-list-cards">
+                            <!-- Card -->
+                            <div class="div-card-room">
+                                <div class="div-card-room-top">
+                                    <div class="div-room-img">
+                                        <img src="" alt="sala-img">
+                                    </div>
+                                    <div class="div-room-title-info">
+                                        <h1>Sala de Aula</h1>
+                                        <h3>Nome do Responsável</h3>
+                                    </div>
+                                </div>
+                                <div class="div-card-room-bottom">
+                                    <div class="div-info-list">
+                                        <ul>
+                                            <li>Qtde. de Patrimonios (Total): </li>
+                                            <li>Categorias: </li>
+                                            <li>Área: </li>
+                                        </ul>
+                                    </div>
+                                    <div class="div-button-details">
+                                        <button class="details-btn">Detalhes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-info-section">
+            <span class="text-copyright">Copyright SENAI 2024 © Todos os direitos reservados.</span>
+        </div>
+    </footer>
+</body>
+
+<script src="../../../JS/fragments/headerScript.js"></script>
+<script src="../../../JS/fragments/loadingScript.js"></script>
+<script src="../../../JS/profile/deleteProfileScript.js"></script>
+
+</html>
