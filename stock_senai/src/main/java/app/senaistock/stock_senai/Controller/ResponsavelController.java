@@ -1,7 +1,10 @@
 package app.senaistock.stock_senai.Controller;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,8 +30,8 @@ import app.senaistock.stock_senai.Repository.SalasRepository;
 import app.senaistock.stock_senai.Repository.AreasRepository;
 import app.senaistock.stock_senai.Repository.BlocosRepository;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class ResponsavelController {
