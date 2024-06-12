@@ -150,10 +150,19 @@ public class ResponsavelController {
         }
     }
 
+    @GetMapping("/sobre-nos")
+    public String acessoSobreNos() {
+        if (acessoResponsavel) {
+            return "pages/about-us-page";
+        } else {
+            return "redirect:/login-responsavel";
+        }
+    }
+
     @GetMapping("/logout-responsavel")
     public String logoutResponsavel() {
         acessoResponsavel = false;
-        return "redirect:/login-responsavel";
+        return "redirect:/";
     }
 
     @GetMapping("/interna-adm")
