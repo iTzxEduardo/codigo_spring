@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Usuário</title>
+    <link rel="stylesheet" href="../../../CSS/profile/styleProfile.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/internal-adm/styleDltPopUp.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/loadingStyle.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/styleHeader.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/styleFooter.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/logo/senai_icon.png">
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/internal-adm/deletePopUp :: div}"></div>
+
+    <div th:insert="~{fragments/loading :: div}"></div>
+    
+    <header th:insert="~{fragments/header :: header}"></header>
+
+    <!-- Seção principal -->
+    <main class="main-section">
+        <div class="profile-section">
+            <div class="div-profile-info-section">
+                <div class="div-profile-img-section">
+                    <div class="div-profile">
+                        <img src="../../../TEMPLATES/icons/user-solid.svg" alt="profile-img">
+                    </div>
+                </div>
+                <div class="div-profile-info-text">
+                    <h1>Responsável</h1>
+                    <h3>Professor</h3>
+                </div>
+                <div class="div-user-config-button-section">
+                    <button class="delete-btn" id="delete-btn-id">Excluir</button>
+                    <button class="edit-btn">Editar Informações</button>
+                </div>
+            </div>
+            <!-- Seção da lista de cards -->
+            <div class="div-profile-rooms-list-section">
+                <div class="rooms-list-cards-section">
+                    <div class="rooms-list-top-section">
+                        <div class="div-list-rooms-title">
+                            <h2>Salas do Responsável</h2>
+                        </div>
+                        <div class="input-filter-section">
+                            <input type="search" placeholder="Filtrar">
+                        </div>
+                    </div>
+
+                    <div class="cards-section">
+                        <div class="div-list-cards">
+                            <!-- Card -->
+                            <div class="div-card-room">
+                                <div class="div-card-room-top">
+                                    <div class="div-room-img">
+                                        <img src="" alt="sala-img">
+                                    </div>
+                                    <div class="div-room-title-info">
+                                        <h1>Sala de Aula</h1>
+                                        <h3>Nome do Responsável</h3>
+                                    </div>
+                                </div>
+                                <div class="div-card-room-bottom">
+                                    <div class="div-info-list">
+                                        <ul>
+                                            <li>Qtde. de Patrimonios (Total): </li>
+                                            <li>Categorias: </li>
+                                            <li>Área: </li>
+                                        </ul>
+                                    </div>
+                                    <div class="div-button-details">
+                                        <button class="details-btn">Detalhes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:insert="~{fragments/footer :: footer}"></footer>
+
+</body>
+
+<script src="../../../JS/fragments/headerScript.js"></script>
+<script src="../../../JS/fragments/loadingScript.js"></script>
+<script src="../../../JS/profile/deleteProfileScript.js"></script>
+
+</html>

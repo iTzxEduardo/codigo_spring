@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="../../CSS/about/styleAboutUs.css">
+    <link rel="stylesheet" href="../../CSS/fragments/loadingStyle.css">
+    <link rel="stylesheet" href="../../CSS/fragments/styleHeader.css">
+    <link rel="stylesheet" href="../../CSS/fragments/styleFooter.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/logo/senai_icon.png">
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/loading :: div}"></div>
+    
+    <header th:insert="~{fragments/header :: header}"></header>
+
+    <main class="main-section">
+        <div class="div-about-us-section">
+            <div class="div-about-us-title">
+                <h1>Sobre Nós!</h1>
+            </div>
+            <div class="div-center-about-us-section">
+                <div class="div-about-us-subtitle">
+                    <h2>Conheça os Desenvolvedores</h2>
+                </div>
+                <div class="div-about-us-devs-section">
+                    <div class="div-about-us-dev dev-1">
+                        <div class="div-dev-title">
+                            <h1>Rafael Moura</h1>
+                            <h2>Desenvolvedor Back-End</h2>
+                        </div>
+                        <div class="div-dev-img">
+                            <img src="assets/devs/rafael.jpg" alt="dev-img">
+                        </div>
+                    </div>
+                    <div class="div-about-us-dev dev-2">
+                        <div class="div-dev-title">
+                            <h1>Heitor Melo</h1>
+                            <h2>Desenvolvedor Back-End e Banco de Dados</h2>
+                        </div>
+                        <div class="div-dev-img">
+                            <img src="assets/devs/heitor.jpg" alt="dev-img">
+                        </div>
+                    </div>
+                    <div class="div-about-us-dev dev-3">
+                        <div class="div-dev-title">
+                            <h1>Eduardo Sinico</h1>
+                            <h2>Desenvolvedor Front-End</h2>
+                        </div>
+                        <div class="div-dev-img">
+                            <img src="assets/devs/sinico.jpg" alt="dev-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="div-our-work-section">
+                    <div class="div-our-work-title">
+                        <h2>Conheça o Nosso Trabalho</h2>
+                    </div>
+                    <div class="div-our-work-text">
+                        <h2>Bem-vindo à nossa página!</h2>
+                        <p>
+                            Somos uma equipe dedicada de estudantes da escola técnica SENAI, e nosso trabalho começou
+                            como um projeto escolar. O nosso objetivo era desenvolver uma solução prática e eficiente
+                            para um problema real que identificamos: a necessidade de um controle de estoque mais
+                            organizado e acessível dentro da nossa instituição.
+                        </p>
+                        <p>
+                            Dessa ideia, nasceu o nosso Sistema Web de Controle de Estoque. Este sistema foi criado com
+                            o propósito de auxiliar a gestão de recursos e materiais da escola, tornando o processo mais
+                            ágil e preciso.
+                        </p>
+                        <p>
+                            O nosso projeto não apenas resolve um problema logístico, mas também representa nosso
+                            compromisso com a inovação e a excelência técnica. Como alunos do SENAI, estamos
+                            constantemente buscando aprimorar nossas habilidades e contribuir positivamente para a nossa
+                            comunidade escolar.
+                        </p>
+                        <p>
+                            Agradecemos por visitar nossa página e esperamos que o nosso Sistema Web de Controle de
+                            Estoque possa servir como inspiração para outros projetos que promovam melhorias
+                            significativas em suas áreas de atuação.
+                        </p>
+                        <p>
+                            Pode copiar, só não faça igual!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:insert="~{fragments/footer :: footer}"></footer>
+
+</body>
+
+<script src="../../JS/fragments/headerScript.js"></script>
+<script src="../../JS/fragments/loadingScript.js"></script>
+
+</html>

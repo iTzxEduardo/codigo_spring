@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --standart-font: "Poppins", sans-serif;
+    --block-color: #E9E9E9;
+    --font-gray-color: #8b8b8b;
+    --block-color-effect: #FD2929;
+    --dark-red-effect: #b60b22;
+    --button-color-blue: #39A5F3;
+    --button-color-blue-effect: #1168a7;
+    --table-tbody-color: #F9F9F9;
+    --table-tbody-color-stardard: #fefefe;
+    --table-tbody-color-effect: #d1d1d1;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.main-section {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    padding: 7.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: var(--standart-font);
+    overflow-y: auto;
+}
+
+.profile-section {
+    width: 65%;
+    height: 785px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.profile-section .div-profile-info-section,
+.div-profile-rooms-list-section,
+.div-adm-list-users-section,
+.div-adm-rooms-list-section {
+    width: 100%;
+    height: 50%;
+}
+
+/* ------------------- Seção do Perfil ------------------- */
+
+.profile-section .div-profile-info-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    border-bottom: 3px solid var(--block-color);
+}
+
+.profile-section .div-profile-info-section .div-profile-img-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-section .div-profile-info-section .div-profile-img-section .div-profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 5px solid darkgray;
+}
+
+.profile-section .div-profile-info-section .div-profile-img-section .div-profile img {
+    width: 75px;
+}
+
+.profile-section .div-profile-info-section .div-profile-info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.profile-section .div-profile-info-section .div-profile-info-text h1,
+h3 {
+    margin: 0px;
+}
+
+.profile-section .div-profile-info-section .div-profile-info-text h1 {
+    font-weight: 400;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.profile-section .div-profile-info-section .div-profile-info-text h3 {
+    font-weight: 300;
+    font-size: 20px;
+    color: var(--font-gray-color);
+}
+
+.profile-section .div-profile-info-section .div-edit-button-profile-section,
+.div-user-config-button-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.profile-section .div-profile-info-section .div-button-edit-info-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-section .div-profile-info-section .div-button-edit-info-section .details-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    padding: 10px;
+}
+
+.profile-section .div-profile-info-section .div-button-edit-info-section .details-button button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 0px;
+    width: 10vh;
+    height: 3vh;
+    padding: 13px;
+    margin: 0px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.profile-section .div-profile-info-section .div-button-edit-info-section .details-button .users-btn {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.profile-section .div-profile-info-section .div-button-edit-info-section .details-button .rooms-btn {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.profile-section .div-profile-info-section .div-button-edit-info-section .details-button button:hover {
+    background-color: black;
+    color: white;
+}
+
+.profile-section .div-profile-info-section .div-button-edit-info-section .details-button button i {
+    font-size: large;
+}
+
+/* ------------------------------------------------------------------------------------ */
+.profile-section .div-profile-info-section .div-user-config-button-section button {
+    margin: 5px;
+    padding: 7px;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-section .div-profile-info-section .div-user-config-button-section .edit-btn {
+    background-color: var(--button-color-blue);
+}
+
+.profile-section .div-profile-info-section .div-user-config-button-section .delete-btn {
+    background-color: red;
+}
+
+.profile-section .div-profile-info-section .div-user-config-button-section .edit-btn:hover {
+    background-color: var(--button-color-blue-effect);
+}
+
+.profile-section .div-profile-info-section .div-user-config-button-section .delete-btn:hover {
+    background-color: var(--dark-red-effect);
+}
+
+
+.profile-section .div-profile-info-section .div-edit-button-profile-section button,
+.div-button-edit-info-section button {
+    margin: 5px;
+    padding: 7px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-section .div-profile-info-section .div-edit-button-profile-section button:hover,
+.div-button-edit-info-section button:hover {
+    background-color: var(--dark-red-effect);
+    color: white;
+}
+
+/* ------------------- Seção das Listas ------------------- */
+.div-profile-rooms-list-section,
+.div-adm-list-users-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 15vh;
+}
+
+.div-adm-rooms-list-section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 15vh;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section,
+.users-list-section,
+.adm-rooms-list-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rooms-list-top-section,
+.users-list-top-section,
+.adm-rooms-list-top-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.div-list-users-title,
+.div-list-rooms-adm-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 23%;
+}
+
+.rooms-list-top-section .div-list-rooms-title h2,
+.div-list-users-title h2,
+.div-list-rooms-adm-title h2 {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.div-list-users-title .div-btn-plus-users,
+.div-list-rooms-adm-title .div-btn-plus-rooms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-list-users-title .div-btn-plus-users button,
+.div-list-rooms-adm-title .div-btn-plus-rooms button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: var(--block-color-effect);
+    border: 2px solid var(--block-color-effect);
+    border-radius: 50vh;
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.div-list-users-title .div-btn-plus-users button:hover,
+.div-list-rooms-adm-title .div-btn-plus-rooms button:hover {
+    background-color: var(--block-color-effect);
+    color: white;
+}
+
+.rooms-list-top-section .input-filter-section,
+.users-list-top-section .input-filter-section,
+.adm-rooms-list-top-section .input-filter-section {
+    width: 30%;
+}
+
+.rooms-list-top-section .input-filter-section input,
+.users-list-top-section .input-filter-section input,
+.adm-rooms-list-top-section .input-filter-section input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards {
+    width: 100%;
+    height: 50vh;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room {
+    width: 200px;
+    height: 325px;
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    background-color: white;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 95%;
+    padding: 5px;
+    border-bottom: 2px solid rgb(223, 223, 223);
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-top .div-room-img {
+    width: 11vh;
+    height: 11vh;
+    border-radius: 10vh;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-top .div-room-title-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-top .div-room-title-info h1 {
+    margin: 5px;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-top .div-room-title-info h3 {
+    margin: 3px;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+div-profile-rooms-list-section .div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 95%;
+    padding: 5px;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-bottom .div-info-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-bottom .div-info-list ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-bottom .div-info-list ul li {
+    list-style: none;
+    font-size: small;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-bottom .div-button-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-bottom .div-button-details button {
+    padding: 7.5px;
+    width: 13.5vh;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: large;
+    font-weight: 300;
+    background-color: var(--button-color-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.div-profile-rooms-list-section .rooms-list-cards-section .div-list-cards .div-card-room .div-card-room-bottom .div-button-details button:hover {
+    transform: scale(0.95);
+    background-color: var(--button-color-blue-effect);
+}
+
+/* ------------------ Página Adm ------------------ */
+.users-list-bottom-section,
+.adm-rooms-list-bottom-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 30vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.users-list-bottom-section table,
+.adm-rooms-list-bottom-section table {
+    width: 85%;
+    height: 15vh;
+    border-collapse: collapse;
+}
+
+.users-list-bottom-section table thead,
+.adm-rooms-list-bottom-section table thead {
+    background-color: var(--block-color-effect);
+}
+
+.users-list-bottom-section table thead th,
+.adm-rooms-list-bottom-section table thead th {
+    width: 40px;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.users-list-bottom-section table tbody,
+.adm-rooms-list-bottom-section table tbody {
+    background-color: var(--table-tbody-color-stardard);
+}
+
+.users-list-bottom-section table tbody:nth-child(odd),
+.adm-rooms-list-bottom-section table tbody:nth-child(odd) {
+    background-color: var(--table-tbody-color);
+}
+
+.users-list-bottom-section table tbody:hover,
+.adm-rooms-list-bottom-section table tbody:hover {
+    background-color: var(--table-tbody-color-effect);
+}
+
+.users-list-bottom-section table tbody td,
+.adm-rooms-list-bottom-section table tbody td {
+    text-align: center;
+    height: 5px;
+    font-weight: 400;
+}
+
+.animation-fade-in {
+    animation: fade-in 0.6s ease-in;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -6,19 +6,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
     // index page
-    @GetMapping("/")
+/*     @GetMapping("/")
     public String acessoHome() {
         return "index";
     }
+     */
     
     // index page
-    @GetMapping("/home")
+    @GetMapping("/login-responsavel")
     public String acessoHome2() {
         return "index";
     }
-
-    @GetMapping("/login-responsavel")
+/* 
+    @GetMapping("/home")
     public String acessoLoginResponsavel() {
-        return "login/login-responsavel";
+        return "pages/home";
+    } */
+
+    @GetMapping("/sobre-nos")
+    public String acessoSobreNos() {
+        return "pages/about-us-page";
     }
 }

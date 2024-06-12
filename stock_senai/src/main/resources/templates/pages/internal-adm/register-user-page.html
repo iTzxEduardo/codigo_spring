@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="../../../CSS/register/styleRegisterUser.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/loadingStyle.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/styleHeader.css">
+    <link rel="stylesheet" href="../../../CSS/fragments/styleFooter.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/logo/senai_icon.png">
+</head>
+
+<body>
+
+    <div th:insert="~{fragments/loading :: div}"></div>
+    
+    <header th:insert="~{fragments/header :: header}"></header>
+
+    <main class="main-section">
+        <div class="div-user-form-section">
+            <div class="div-form">
+                <div class="div-user-form-title">
+                    <h1>Cadastrar Usuários</h1>
+                </div>
+                <div class="div-form-info">
+                    Preencha os campos abaixo para cadastrar um novo usuário
+                </div>
+                <form action="" method="post" id="form-user-id">
+                    <div class="div-form-input-section">
+                        <div class="div-input-part">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" placeholder="Insira o e-mail">
+                        </div>
+                        <div class="div-input-part">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" placeholder="Insira o nome">
+                        </div>
+                        <div class="div-input-part">
+                            <label for="cargo">Cargo</label>
+                            <input type="text" name="cargo" placeholder="Insira o cargo">
+                        </div>
+                        <div class="div-input-part">
+                            <label for="senha">Senha</label>
+                            <input type="password" name="senha" placeholder="Insira a senha">
+                        </div>
+                    </div>
+                    <div class="div-form-submit-btn-section">
+                        <input type="submit" value="Cadastrar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer th:insert="~{fragments/footer :: footer}"></footer>
+
+</body>
+
+<script src="../../../JS/fragments/headerScript.js"></script>
+<script src="../../../JS/fragments/loadingScript.js"></script>
+<script src="../../../JS/register/registerUserScript.js"></script>
+
+</html>

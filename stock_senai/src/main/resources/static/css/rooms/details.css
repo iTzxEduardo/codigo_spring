@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --standart-font: "Poppins", sans-serif;
+    --block-color: #E9E9E9;
+    --block-color-effect: #FD2929;
+    --button-color-blue: #39A5F3;
+    --button-color-blue-effect: #1168a7;
+    --table-tbody-color: #F9F9F9;
+    --table-tbody-color-stardard: #fefefe;
+    --table-tbody-color-effect: #d1d1d1;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 10vh;
+    overflow-y: hidden;
+}
+
+.main-section {
+    position: absolute;
+    width: 100%;
+    height: 875px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--standart-font);
+    overflow-y: auto;
+}
+
+.details-info-section {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.details-info-section .div-details-info-top,
+.div-details-info-bottom {
+    width: 100%;
+    height: 25%;
+}
+
+.details-info-section .div-details-info-top {
+    display: flex;
+    padding: 25px;
+    border-bottom: 3px solid gainsboro;
+}
+
+.details-info-section .div-details-info-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+
+
+/* --------------------------- Seção de Cima --------------------------- */
+
+/* --------------------------- Campo da imagem --------------------------- */
+.details-info-section .div-details-info-top .div-details-rooms-img-section,
+.div-details-info-section {
+    width: 50%;
+    height: 50vh;
+}
+
+.details-info-section .div-details-info-top .div-details-rooms-img-section {
+    display: flex;
+    justify-content: center;
+}
+
+.details-info-section .div-details-info-top .div-details-rooms-img-section .div-sidebar-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 14%;
+    height: 100%;
+}
+
+.details-info-section .div-details-info-top .div-details-rooms-img-section .div-img-room-mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7vh;
+    height: 8vh;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: gray;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.selected-img {
+    border: 2px solid black;
+}
+
+.details-info-section .div-details-info-top .div-details-rooms-img-section .div-img-room-mini img {
+    font-size: 10px;
+    width: 7vh;
+    height: 8vh;
+    border-radius: 20px;
+}
+
+.details-info-section .div-details-info-top .div-details-rooms-img-section .div-room-img-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 65%;
+
+}
+
+.details-info-section .div-details-info-top .div-details-rooms-img-section .div-room-img-section .div-img-room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    border-radius: 40px;
+    background-color: gray;
+}
+
+
+.details-info-section .div-details-info-top .div-details-rooms-img-section .div-room-img-section .div-img-room img {
+    width: 95%;
+    height: 100%;
+    border-radius: 40px;
+}
+
+/* --------------------------- Campo das informações --------------------------- */
+.details-info-section .div-details-info-top .div-details-info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    border-bottom: 2px solid black;
+    margin: 10px;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info-title h1 {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 10px;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info {
+    height: 30vh;
+    width: 90%;
+    padding: 10px;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info .div-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info .div-info .div-info-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info .div-info .div-info-list ul li {
+    list-style: none;
+    padding: 5px;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info .div-info .div-info-list ul li select {
+    padding: 7px;
+    border: 1px solid black;
+    font-weight: 600;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info .div-info-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info .div-info-text p {
+    text-indent: 35px;
+    text-align: justify;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info-button-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 85%;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info-button-section .details-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    padding: 10px;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info-button-section .details-button button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid black;
+    width: 5vh;
+    height: 3vh;
+    padding: 5px;
+    margin: 0px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info-button-section .details-button .wrench-btn {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info-button-section .details-button .envelope-btn {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info-button-section .details-button button:hover {
+    background-color: black;
+    color: white;
+}
+
+.details-info-section .div-details-info-top .div-details-info-section .div-details-info-button-section .details-button button i {
+    font-size: large;
+}
+
+/* --------------------------- Seção de Baixo --------------------------- */
+
+.details-info-section .div-details-info-bottom .div-table-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-maintenance,
+.div-table-transfer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-maintenance .div-table-maint-title h2,
+.div-table-transfer .div-table-transf-title h2 {
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-maintenance .div-table,
+.div-table-transfer .div-table {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 30vh;
+    overflow-y: auto;
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-maintenance .div-table table,
+.div-table-transfer .div-table table {
+    width: 75%;
+    height: 15vh;
+    border-collapse: collapse;
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-maintenance .div-table table thead,
+.div-table-transfer table thead {
+    background-color: var(--block-color-effect);
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-maintenance .div-table table thead th,
+.div-table-transfer .div-table table thead th {
+    width: 40px;
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-maintenance .div-table table tbody,
+.div-table-transfer .div-table table tbody {
+    background-color: var(--table-tbody-color-stardard);
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-maintenance .div-table table tbody:nth-child(odd),
+.div-table-transfer .div-table table tbody:nth-child(odd) {
+    background-color: var(--table-tbody-color);
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-maintenance .div-table table tbody:hover,
+.div-table-transfer .div-table table tbody:hover {
+    background-color: var(--table-tbody-color-effect);
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table .div-table-maintenance .div-table table tbody td,
+.div-table-transfer .div-table table tbody td {
+    height: 5px;
+    font-weight: 400;
+}
+
+.details-info-section .div-details-info-bottom .div-table-info .div-table-transfer {
+    display: none;
+}
+
+.animation-fade-in{
+    animation: fade-in 0.6s ease-in;
+}
+
+@keyframes fade-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

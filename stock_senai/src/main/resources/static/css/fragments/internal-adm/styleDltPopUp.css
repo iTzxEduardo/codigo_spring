@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --standart-font: "Poppins", sans-serif;
+    --background-color: #00000060;
+    --block-color-effect: #FD2929;
+    --dark-red-effect: #b60b22;
+    --button-color-green-effect: #08a727;
+}
+
+.div-dlt-pop-up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: white;
+    font-family: var(--standart-font);
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-icon-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: var(--block-color-effect);
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-icon-section img {
+    width: 80px;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-pop-up-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-pop-up-title h1 {
+    margin: 10px
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-pop-up-info {
+    text-align: center;
+    width: 100%;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-pop-up-info p {
+    margin: 5px;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-pop-up-info .div-loading-points{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    margin: 5px;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-pop-up-info .div-loading-points span{
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: darkgray;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-pop-up-info .div-loading-points span:nth-child(1){
+    animation: impulse-anim 0.6s ease-in-out infinite alternate;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-pop-up-info .div-loading-points span:nth-child(2){
+    animation: impulse-anim 0.6s ease-in-out infinite alternate 0.2s;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-pop-up-info .div-loading-points span:nth-child(3){
+    animation: impulse-anim 0.6s ease-in-out infinite alternate 0.4s;
+}
+
+@keyframes impulse-anim {
+    100%{
+        transform: scale(1.5);
+    }
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-btn-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-btn-section button {
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 10px;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-btn-section .delete-btn-true:hover {
+    background-color: var(--dark-red-effect);
+    color: white;
+}
+
+.div-dlt-pop-up .div-dlt-pop-up-section .div-btn-section .cancel-btn:hover {
+    background-color: var(--button-color-green-effect);
+    color: white;
+}
+
+

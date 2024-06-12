@@ -1,16 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Stock Senai</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="../../CSS/login/styleLogin.css">
+    <link rel="icon" type="image/x-icon" href="assets/logo/senai_icon.png">
 </head>
+
 <body>
-    <div class="container">
-        <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
-    </div>
-    
-    <h1>Aplicativo de Gerenciamento de Estoque e Patrimônios</h1>
+    <main class="main-login-center">
+        <form action="acesso-responsavel" class="form-login" method="post">
+            <div class="form-login-title">
+                <h1>Login</h1>
+                <h3>Bem-vindo(a) ao Sistema de Estoque do SENAI-SP</h3>
+            </div>
+            <div class="form-login-input">
+                <div class="form-login-input-up">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email-input-id"
+                        placeholder="Insira o seu e-mail institucional">
+                </div>
+                <div class="form-login-input-down">
+                    <div class="form-login-input-senha-section">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha-input-id" placeholder="Insira a sua senha">
+                    </div>
+                    <div class="form-login-forget-password-section">
+                        <a href="#">Esqueceu a Senha?</a>
+                    </div>
+                </div>
+                <div class="form-login-button">
+                    <input type="submit" value="Acessar">
+                </div>
+            </div>
+            <div class="form-login-senai-logo">
+                <img src="assets/senai.png" alt="senai-logo">
+            </div>
+        </form>
+    </main>
 </body>
+
 </html>
