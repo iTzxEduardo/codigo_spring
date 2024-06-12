@@ -33,8 +33,7 @@
                 <div class="div-list-blocks">
                     <ul th:each="bloco : ${blocos}">
                         <li>
-                            <button onclick="location.href='/detalhes-bloco/{id}(id=${bloco.idbloco})'"
-                                th:text="${bloco.nome_bloco}"></button>
+                            <a th:href="@{/detalhes-bloco/{id}(id=${bloco.idbloco})}" th:text="${bloco.nome_bloco}"></a>
                         </li>
                         <!-- <li><button>Bloco A</button></li>
                         <li><button>Bloco B</button></li>
