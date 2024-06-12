@@ -46,27 +46,23 @@ body{
 
 .home-list-section .home-list-blocks-section .div-list-blocks ul{
     padding: 1px;
-    width: 100%;
 }
 
-.home-list-section .home-list-blocks-section .div-list-blocks ul li{
-    width: 100%;
-}
-
-.home-list-section .home-list-blocks-section .div-list-blocks ul li a{
-    margin: 20px;
+.home-list-section .home-list-blocks-section .div-list-blocks ul li button{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15px;
     padding: 20px;
-    width: 100%;
+    width: 85%;
     border: 0px;
     list-style: none;
-    color: black;
-    text-decoration: none;
     background-color: var(--block-color);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.home-list-section .home-list-blocks-section .div-list-blocks ul li a:hover{
+.home-list-section .home-list-blocks-section .div-list-blocks ul li button:hover{
     color: white;
     background-color: var(--block-color-effect);
 }

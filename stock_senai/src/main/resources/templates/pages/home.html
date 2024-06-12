@@ -31,9 +31,14 @@
                 </div>
 
                 <div class="div-list-blocks">
+
+
                     <ul th:each="bloco : ${blocos}">
                         <li>
-                            <a th:href="@{/detalhes-bloco/{id}(id=${bloco.idbloco})}" th:text="${bloco.nome_bloco}"></a>
+                            <a id="linkBloco" th:href="@{/detalhes-bloco/{id}(id=${bloco.idbloco})}"
+                                style="display: none;"></a>
+                            <button onclick="redirecionar(document.getElementById('linkBloco').href)"
+                                th:text="${bloco.nome_bloco}"></button>
                         </li>
                         <!-- <li><button>Bloco A</button></li>
                         <li><button>Bloco B</button></li>
@@ -51,5 +56,12 @@
 
 <script src="../JS/fragments/headerScript.js"></script>
 <script src="../JS/fragments/loadingScript.js"></script>
+
+<script>
+    function redirecionar(url) {
+        window.location.href = url;
+    }
+</script>
+</head>
 
 </html>
