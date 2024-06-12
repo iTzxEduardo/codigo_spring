@@ -48,16 +48,21 @@ body{
     padding: 1px;
 }
 
-.home-list-section .home-list-blocks-section .div-list-blocks ul li{
+.home-list-section .home-list-blocks-section .div-list-blocks ul li button{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin: 15px;
     padding: 20px;
+    width: 85%;
+    border: 0px;
     list-style: none;
     background-color: var(--block-color);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.home-list-section .home-list-blocks-section .div-list-blocks ul li:hover{
+.home-list-section .home-list-blocks-section .div-list-blocks ul li button:hover{
     color: white;
     background-color: var(--block-color-effect);
 }

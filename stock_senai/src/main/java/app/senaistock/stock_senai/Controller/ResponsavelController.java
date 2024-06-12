@@ -38,7 +38,6 @@ public class ResponsavelController {
 
     private CategoriasRepository categoriasRepository;
 
-
     @Autowired
     private BlocosRepository blocosRepository;
 
@@ -65,7 +64,7 @@ public class ResponsavelController {
             } else {
                 model.addAttribute("cargo", "Cargo não encontrado!");
             }
-            vaiPara = "interna/interna-responsavel";
+            vaiPara = "pages/internal-user-page";
         } else {
             vaiPara = "redirect:/login-responsavel";
         }
@@ -84,7 +83,7 @@ public class ResponsavelController {
                 if ("adm@senai.com".equals(email)) {
                     url = "redirect:/interna-adm";
                 } else {
-                    url = "redirect:/interna-responsavel";
+                    url = "redirect:/home";
                 }
             } else {
                 model.addAttribute("mensagem", "erro ao realizar o login.");
@@ -140,15 +139,15 @@ public class ResponsavelController {
     }
 
     // Listar todos os blocos
-    @GetMapping("/")
+    @GetMapping("/home")
     public String listarBlocos(Model model) {
-      /*   if (acessoResponsavel) { */
+        if (acessoResponsavel) {
             List<Blocos> blocos = (List<Blocos>) blocosRepository.findAll();
             model.addAttribute("blocos", blocos);
-            return "index";
-      /*   } else {
+            return "pages/home";
+        } else {
             return "redirect:/login-responsavel";
-        } */
+        }
     }
 
     @GetMapping("/logout-responsavel")
@@ -169,13 +168,13 @@ public class ResponsavelController {
     // listar salas de acordo com o Bloco clicado
     @GetMapping("/detalhes-bloco/{id}")
     public String detalhesBloco(@PathVariable("id") Long id_bloco, Model model) {
-        
+
         Blocos bloco = blocosRepository.findById(id_bloco).orElse(null);
         if (bloco != null) {
             List<Salas> salasDoBloco = salasRepository.findByIdbloco(bloco);
             model.addAttribute("bloco", bloco);
             model.addAttribute("salasDoBloco", salasDoBloco);
-            
+
             return "/pages/list-room-page";
         } else {
             // Lidar com o bloco não encontrado
@@ -193,7 +192,7 @@ public class ResponsavelController {
             model.addAttribute("sala", sala);
             model.addAttribute("categoria", categorias);
             model.addAttribute("patrimoniosDaSala", patrimoniosDaSala);
-            
+
             return "/pages/details-room-page";
         } else {
             // Lidar com o bloco não encontrado
