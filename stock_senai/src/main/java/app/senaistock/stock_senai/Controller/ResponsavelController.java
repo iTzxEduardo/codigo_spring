@@ -14,7 +14,6 @@ import app.senaistock.stock_senai.Model.Responsaveis;
 import app.senaistock.stock_senai.Repository.CargosRepository;
 import app.senaistock.stock_senai.Repository.ResponsaveisRepository;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Controller
@@ -95,6 +94,9 @@ public class ResponsavelController {
         }
         return vaiPara;
     }
+
+
+    
 
     @GetMapping("/logout-responsavel")
     public String logoutResponsavel() {
