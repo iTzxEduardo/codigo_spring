@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -25,12 +25,12 @@
             <div class="div-profile-info-section">
                 <div class="div-profile-img-section">
                     <div class="div-profile">
-                        <img src="../../../TEMPLATES/icons/user-solid.svg" alt="profile-img">
+                        <img src="assets/icons/user-solid.svg" alt="profile-img">
                     </div>
                 </div>
                 <div class="div-profile-info-text">
-                    <h1>Bem-vindo(a), Administrador(a)!</h1>
-                    <h3>Administrador</h3>
+                    <h1>Bem-vindo(a), <span th:text="${nome}">Administrador(a)</span>!</h1>
+                    <h3 th:text="${cargo}"></h3>
                 </div>
                 <div class="div-button-edit-info-section">
                     <div class="details-button">

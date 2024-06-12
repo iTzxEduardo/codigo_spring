@@ -167,8 +167,19 @@ public class ResponsavelController {
 
     @GetMapping("/interna-adm")
     public String acessoPaginaInternaAdm(Model model) {
+        String vaiPara = "";
+        String responsavelEmail = email;
+        Responsaveis responsaveis = responsavelRepository.findByEmail(responsavelEmail);
         if (acessoResponsavel && "adm@senai.com".equals(email)) {
-            return "interna/interna-adm";
+            model.addAttribute("nome", responsaveis.getNome_responsavel());
+            model.addAttribute("foto", responsaveis.getFoto());
+            Cargos cargo = responsaveis.getId_cargo();
+            if (cargo != null) {
+                model.addAttribute("cargo", cargo.getNome_cargo());
+            } else {
+                model.addAttribute("cargo", "Cargo não encontrado!");
+            }
+            return "pages/internal-adm/internal-adm-page";
         } else {
             return "redirect:/interna-responsavel";
         }
