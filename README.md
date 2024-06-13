@@ -62,9 +62,6 @@
   Method Put:
 ![Modelo de Negócios](requisitions_api_images/salas/put-salas.png)
 
-  Method Delete:
-![Modelo de Negócios](requisitions_api_images/salas/delete-salas.png)
-
 ---
 ### Areas
 
@@ -108,13 +105,13 @@
 ### Transferências
 
   Method Get:
-![Modelo de Negócios](requisitions_api_images/transferencias/get-transferencia.png)
+![Modelo de Negócios](requisitions_api_images/transferencias/get-transferencias.png)
 
   Method Post:
-![Modelo de Negócios](requisitions_api_images/transferencia/post-transferencia.png)
+![Modelo de Negócios](requisitions_api_images/transferencia/post-transferencias.png)
 
   Method Put:
-![Modelo de Negócios](requisitions_api_images/transferencia/put-transferencia.png)
+![Modelo de Negócios](requisitions_api_images/transferencia/put-transferencias.png)
 
 ---
 ### Patrimônios
