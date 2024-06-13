@@ -18,5 +18,5 @@ Objetivos:
 </ul>
 
 Modelo Conceitual:
-![Modelo de Negócios](https://exemplo.com/gato.jpg)
+![Modelo de Negócios](requisitions_api_images/areas.png)
 
