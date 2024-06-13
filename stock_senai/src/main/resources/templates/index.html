@@ -1,106 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/fragments/loadingStyle.css">
-    <link rel="stylesheet" href="/css/fragments/styleHeader.css">
-    <link rel="stylesheet" href="/css/fragments/styleFooter.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/Public/logo/senai_icon.png">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../CSS/login/styleLogin.css">
+    <link rel="icon" type="image/x-icon" href="assets/logo/senai_icon.png">
 </head>
 
 <body>
-
-    <div class="div-preloader" id="preloader-id">
-        <span class="span-effect span-1">S</span>
-        <span class="span-effect span-2">E</span>
-        <span class="span-effect span-3">N</span>
-        <span class="span-effect span-4">A</span>
-        <span class="span-effect span-5">I</span>
-    </div>
-
-    <header class="header-section">
-        <div class="header-main-section">
-            <div class="div-main-left-section">
-                <div class="div-menu-button">
-                    <button id="toggle-button" class="arrow-menu-btn"><i id="arrow-icon"
-                            class="fas fa-regular fa-chevron-right"></i></button>
-                </div>
+    <main class="main-login-center">
+        <form action="acesso-responsavel" class="form-login" method="post">
+            <div class="form-login-title">
+                <h1>Login</h1>
+                <h3>Bem-vindo(a) ao Sistema de Estoque do SENAI-SP</h3>
             </div>
-            <div class="div-main-right-section">
-                <div class="div-search-input">
-                    <input type="search" name="search-input" id="search-input-id" placeholder="Pesquisar">
+            <div class="form-login-input">
+                <div class="form-login-input-up">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email-input-id"
+                        placeholder="Insira o seu e-mail institucional">
                 </div>
-                <div class="div-buttons-section">
-                    <button class="notification-icon-btn"><i class="fas fa-regular fa-bell"></i></button>
-                </div>
-                <div class="div-senai-logo">
-                    <img src="Public/senai.png" alt="senai-logo">
-                </div>
-            </div>
-        </div>
-        <div id="sidebar" class="header-side-menu">
-            <div class="header-side-bar-top-section">
-                <div class="div-links-buttons">
-                    <button class="btn-home"><i class="fas fa-solid fa-list"></i>Home</button>
-                    <button class="btn-profile"><i class="fas fa-solid fa-user"></i>Perfil</button>
-                    <button class="btn-about-us"><img src="Public/icons/circle-exclamation-solid.svg" width="20px"
-                            style="margin-right: 10px;" alt="img-exclamation">Sobre
-                        Nós</button>
-                    <button class="btn-exit"><img src="Public/icons/right-from-bracket-solid.svg" width="20px"
-                            style="margin-right: 10px;" alt="img-exit">
-                        Sair</button>
-                </div>
-            </div>
-            <div class="header-side-bar-bottom-section">
-                <div class="div-conf-button">
-                    <button><img src="Public/icons/gear-solid.svg" width="20px" style="margin-right: 10px;"
-                            alt="img-gear">Configurações</button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Seção principal -->
-    <main class="main-section">
-        <div class="home-list-section">
-            <div class="home-list-title">
-                <h1>Blocos Disponíveis</h1>
-            </div>
-            <div class="home-list-blocks-section">
-                <div class="div-list-blocks-title">
-                    Selecione um Bloco
-                </div>
-
-                    <div class="div-list-blocks">
-                        <ul th:each="bloco : ${blocos}">
-                            <li >
-                                <span th:text="${bloco.idbloco}">ID</span>
-                                <a th:href="@{/detalhes-bloco/{id}(id=${bloco.idbloco})}" th:text="${bloco.nome_bloco}">Nome</a>
-                            </li>
-                            <!-- <li><span>Bloco A</span></li>
-                            <li><span>Bloco B</span></li>
-                            <li><span>Bloco C</span></li>
-                            <li><span>Bloco D</span></li> -->
-                        </ul>
+                <div class="form-login-input-down">
+                    <div class="form-login-input-senha-section">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha-input-id" placeholder="Insira a sua senha">
                     </div>
+                    <div class="form-login-forget-password-section">
+                        <a href="#">Esqueceu a Senha?</a>
+                    </div>
+                </div>
+                <div class="form-login-button">
+                    <input type="submit" value="Acessar">
+                </div>
             </div>
-        </div>
+            <div class="form-login-senai-logo">
+                <img src="assets/senai.png" alt="senai-logo">
+            </div>
+        </form>
     </main>
-
-    <footer class="footer-section">
-        <div class="footer-info-section">
-            <span class="text-copyright">Copyright SENAI 2024 © Todos os direitos reservados.</span>
-        </div>
-    </footer>
-
 </body>
-
-<script src="../JS/fragments/headerScript.js"></script>
-<script src="../JS/fragments/loadingScript.js"></script>
 
 </html>

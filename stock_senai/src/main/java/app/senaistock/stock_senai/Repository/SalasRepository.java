@@ -11,7 +11,6 @@ import app.senaistock.stock_senai.Model.Salas;
 
 public interface SalasRepository extends CrudRepository<Salas, Long>{
     Optional<Salas> findById(long id);
-    List<Salas> findAll();
-    List<Salas> findByIdbloco(Blocos idbloco);
 
+    List<Salas> findByIdbloco(Blocos idbloco);
 }

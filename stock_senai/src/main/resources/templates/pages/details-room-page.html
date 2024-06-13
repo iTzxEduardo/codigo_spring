@@ -10,61 +10,15 @@
     <link rel="stylesheet" href="/css/fragments/styleHeader.css">
     <link rel="stylesheet" href="/css/fragments/styleFooter.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/Public/logo/senai_icon.png">
+    <link rel="icon" type="image/x-icon" href="assets/logo/senai_icon.png">
 </head>
 
 <body>
-    
-    <div class="div-preloader" id="preloader-id">
-        <span class="span-effect span-1">S</span>
-        <span class="span-effect span-2">E</span>
-        <span class="span-effect span-3">N</span>
-        <span class="span-effect span-4">A</span>
-        <span class="span-effect span-5">I</span>
-    </div>
-    
-    <header class="header-section">
-        <div class="header-main-section">
-            <div class="div-main-left-section">
-                <div class="div-menu-button">
-                    <button id="toggle-button" class="arrow-menu-btn"><i id="arrow-icon"
-                            class="fas fa-regular fa-chevron-right"></i></button>
-                </div>
-            </div>
-            <div class="div-main-right-section">
-                <div class="div-search-input">
-                    <input type="search" name="search-input" id="search-input-id" placeholder="Pesquisar">
-                </div>
-                <div class="div-buttons-section">
-                    <button class="notification-icon-btn"><i class="fas fa-regular fa-bell"></i></button>
-                </div>
-                <div class="div-senai-logo">
-                    <img src="/Public/senai.png" alt="senai-logo">
-                </div>
-            </div>
-        </div>
-        <div id="sidebar" class="header-side-menu">
-            <div class="header-side-bar-top-section">
-                <div class="div-links-buttons">
-                    <button class="btn-home"><i class="fas fa-solid fa-list"></i>Home</button>
-                    <button class="btn-profile"><i class="fas fa-solid fa-user"></i>Perfil</button>
-                    <button class="btn-about-us"><img src="/Public/icons/circle-exclamation-solid.svg"
-                            width="20px" style="margin-right: 10px;" alt="img-exclamation">Sobre
-                        Nós</button>
-                    <button class="btn-exit"><img src="/Public/icons/right-from-bracket-solid.svg" width="20px"
-                            style="margin-right: 10px;" alt="img-exit">
-                        Sair</button>
-                </div>
-            </div>
-            <div class="header-side-bar-bottom-section">
-                <div class="div-conf-button">
-                    <button><img src="/Public/icons/gear-solid.svg" width="20px" style="margin-right: 10px;"
-                            alt="img-gear">Configurações</button>
-                </div>
-            </div>
-        </div>
-    </header>
-    
+
+    <div th:insert="~{fragments/loading :: div}"></div>
+
+    <header th:insert="~{fragments/header :: header}"></header>
+
     <div class="main-section">
         <div class="details-info-section">
             <div class="div-details-info-top">
@@ -99,15 +53,16 @@
                                     <li>Área: </li>
                                     <li>
                                         Categorias:<br>
-                                        <select>
+
+
+
+                                        <select th:each="categoria : ${categorias}">
                                             <option value="">Todas as Categorias</option>
-                                            <select>
-                                               <!--  <option value="">Todas as Categorias</option> -->
-                                                <option th:each="categoria : ${categorias}" th:value="${categoria.id_categoria}" th:text="${categoria.nome_categoria}"></option>
+                                            <option th:value="${categoria.id_categoria}"></option>
                                             </select>
                                             
                                             <!-- Outras opções -->
-                                        </select>
+                                        
                                            <!--   <option>Caixa de Som</option>
                                             <option>Mesas</option>
                                             <option>Cadeiras</option>
@@ -118,10 +73,13 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="div-info-text">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, ipsum minus esse
-                                    ab sunt delectus laboriosam nihil minima soluta dolorem nulla doloremque commodi
-                                    quaerat, voluptatem natus molestias. Voluptatibus, ratione fugiat.</p>
+                            <div class=" div-info-text">
+                                                <p th:text = "${sala}"><!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam,
+                                                    ipsum minus esse
+                                                    ab sunt delectus laboriosam nihil minima soluta dolorem nulla
+                                                    doloremque commodi
+                                                    quaerat, voluptatem natus molestias. Voluptatibus, ratione fugiat. -->
+                                                </p>
                             </div>
                         </div>
                     </div>
@@ -139,30 +97,21 @@
                 <div class="div-table-info">
                     <div class="div-table-maintenance" id="table-maintenance-id">
                         <div class="div-table-maint-title">
-                            <h2>Equipamentos em Manutenção</h2>
+                            <h2>Patrimonios</h2>
                         </div>
                         <div class="div-table">
-                            <table>
+                            <table th:each="patrimonios : ${patrimoniosDaSala}">
                                 <thead>
-                                    <th>ID</th>
-                                    <th>Categoria</th>
+                                    <th>Nome</th>
+                                    <th>Data de Registro</th>
                                     <th>Status</th>
                                 </thead>
                                 <tbody>
-                                    <td>1</td>
-                                    <td>Computador</td>
-                                    <td>Manutenção</td>
+                                    <td th:text="${patrimonios.nome_patrimonio}"></td>
+                                    <td th:text="${patrimonios.data_registro_patrimonio}"></td>
+                                    <td th:text="${patrimonios.status_patrimonio}"></td>
                                 </tbody>
-                                <tbody>
-                                    <td>2</td>
-                                    <td>Mesa</td>
-                                    <td>Manutenção</td>
-                                </tbody>
-                                <tbody>
-                                    <td>3</td>
-                                    <td>Projetor</td>
-                                    <td>Manutenção</td>
-                                </tbody>
+                              
                             </table>
                         </div>
                     </div>
@@ -190,11 +139,7 @@
         </div>
     </div>
 
-    <footer class="footer-section">
-        <div class="footer-info-section">
-            <span class="text-copyright">Copyright SENAI 2024 © Todos os direitos reservados.</span>
-        </div>
-    </footer>
+    <footer th:insert="~{fragments/footer :: footer}"></footer>
 
 </body>
 

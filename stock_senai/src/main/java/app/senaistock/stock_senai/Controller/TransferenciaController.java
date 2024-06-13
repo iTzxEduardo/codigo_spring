@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import app.senaistock.stock_senai.Model.Transferencia;
 import app.senaistock.stock_senai.Repository.TransferenciaRepository;
 
-@RestController
+@RestController 
 @RequestMapping("/transferencias")
 public class TransferenciaController {
     @Autowired

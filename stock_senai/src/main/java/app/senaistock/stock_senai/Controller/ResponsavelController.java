@@ -35,9 +35,7 @@ public class ResponsavelController {
     private CargosRepository cargosRepository;
 
     @Autowired
-
     private CategoriasRepository categoriasRepository;
-
 
     @Autowired
     private BlocosRepository blocosRepository;
@@ -45,6 +43,7 @@ public class ResponsavelController {
     @Autowired
     private PatrimonioRepository patrimonioRepository;
 
+    @Autowired
     private SalasRepository salasRepository;
 
     boolean acessoResponsavel = false; // Definir o estado do login do usuário (logado/não logado)
@@ -55,17 +54,20 @@ public class ResponsavelController {
     public String acessoPaginaInternaResponsavel(Model model) {
         String vaiPara = "";
         String responsavelEmail = email;
+
         Responsaveis responsaveis = responsavelRepository.findByEmail(responsavelEmail);
+        
         if (acessoResponsavel) {
-            model.addAttribute("nome", responsaveis.getNome_responsavel());
-            model.addAttribute("foto", responsaveis.getFoto());
+            model.addAttribute("responsavel", responsaveis.getNome_responsavel());
+            Salas idSalaRespon =  responsaveis.getIdsala();
+        
             Cargos cargo = responsaveis.getId_cargo();
             if (cargo != null) {
                 model.addAttribute("cargo", cargo.getNome_cargo());
             } else {
                 model.addAttribute("cargo", "Cargo não encontrado!");
             }
-            vaiPara = "interna/interna-responsavel";
+            vaiPara = "pages/internal-user-page";
         } else {
             vaiPara = "redirect:/login-responsavel";
         }
@@ -84,7 +86,7 @@ public class ResponsavelController {
                 if ("adm@senai.com".equals(email)) {
                     url = "redirect:/interna-adm";
                 } else {
-                    url = "redirect:/interna-responsavel";
+                    url = "redirect:/home";
                 }
             } else {
                 model.addAttribute("mensagem", "erro ao realizar o login.");
@@ -140,15 +142,15 @@ public class ResponsavelController {
     }
 
     // Listar todos os blocos
-    @GetMapping("/")
+    @GetMapping("/home")
     public String listarBlocos(Model model) {
-      /*   if (acessoResponsavel) { */
+        if (acessoResponsavel) {
             List<Blocos> blocos = (List<Blocos>) blocosRepository.findAll();
             model.addAttribute("blocos", blocos);
-            return "index";
-      /*   } else {
+            return "pages/home";
+        } else {
             return "redirect:/login-responsavel";
-        } */
+        }
     }
 
     @GetMapping("/logout-responsavel")
@@ -169,14 +171,14 @@ public class ResponsavelController {
     // listar salas de acordo com o Bloco clicado
     @GetMapping("/detalhes-bloco/{id}")
     public String detalhesBloco(@PathVariable("id") Long id_bloco, Model model) {
-        
         Blocos bloco = blocosRepository.findById(id_bloco).orElse(null);
         if (bloco != null) {
             List<Salas> salasDoBloco = salasRepository.findByIdbloco(bloco);
+
             model.addAttribute("bloco", bloco);
             model.addAttribute("salasDoBloco", salasDoBloco);
-            
-            return "/pages/list-room-page";
+
+            return "pages/list-room-page";
         } else {
             // Lidar com o bloco não encontrado
             return "redirect:/listar-blocos";
@@ -189,11 +191,10 @@ public class ResponsavelController {
         Salas sala = salasRepository.findById(id_sala).orElse(null);
         if (sala != null) {
             List<Patrimonio> patrimoniosDaSala = patrimonioRepository.findByIdsala(sala);
-            Iterable<Categorias> categorias = categoriasRepository.findAll();
-            model.addAttribute("sala", sala);
-            model.addAttribute("categoria", categorias);
+
+            model.addAttribute("sala", sala.getDescricao_sala());
             model.addAttribute("patrimoniosDaSala", patrimoniosDaSala);
-            
+
             return "/pages/details-room-page";
         } else {
             // Lidar com o bloco não encontrado

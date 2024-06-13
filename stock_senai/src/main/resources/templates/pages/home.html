@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fragments/loadingStyle.css">
+    <link rel="stylesheet" href="/css/fragments/styleHeader.css">
+    <link rel="stylesheet" href="/css/fragments/styleFooter.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/Public/logo/senai_icon.png">
+</head>
+
+<body>
+    <div th:insert="~{fragments/loading :: div}"></div>
+
+    <header th:insert="~{fragments/header :: header}"></header>
+
+    <!-- Seção principal -->
+    <main class="main-section">
+        <div class="home-list-section">
+            <div class="home-list-title">
+                <h1>Blocos Disponíveis</h1>
+            </div>
+            <div class="home-list-blocks-section">
+                <div class="div-list-blocks-title">
+                    Selecione um Bloco
+                </div>
+
+                    <div class="div-list-blocks">
+                        <ul th:each="bloco : ${blocos}">
+                            <li >
+                                <span th:text="${bloco.idbloco}">ID</span>
+                                <a th:href="@{/detalhes-bloco/{id}(id=${bloco.idbloco})}" th:text="${bloco.nome_bloco}">Nome</a>
+                            </li>
+                            <!-- <li><span>Bloco A</span></li>
+                            <li><span>Bloco B</span></li>
+                            <li><span>Bloco C</span></li>
+                            <li><span>Bloco D</span></li> -->
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-info-section">
+            <span class="text-copyright">Copyright SENAI 2024 © Todos os direitos reservados.</span>
+        </div>
+    </footer>
+
+</body>
+
+<script src="../JS/fragments/headerScript.js"></script>
+<script src="../JS/fragments/loadingScript.js"></script>
+
+</html>	
