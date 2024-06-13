@@ -106,10 +106,10 @@
 ![Modelo de Negócios](requisitions_api_images/transferencias/get-transferencias.png)
 
   Method Post:
-![Modelo de Negócios](requisitions_api_images/transferencia/post-transferencias.png)
+![Modelo de Negócios](requisitions_api_images/transferencias/post-transferencias.png)
 
   Method Put:
-![Modelo de Negócios](requisitions_api_images/transferencia/put-transferencias.png)
+![Modelo de Negócios](requisitions_api_images/transferencias/put-transferencias.png)
 
 ---
 ### Patrimônios
