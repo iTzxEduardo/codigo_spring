@@ -12,6 +12,8 @@ Figma:<br>
 
 # Implementação e Construção do layout Site:
 
+<hr>
+
 ## Página de Login:
 
 A primeira página a ser construída, foi a página de Login. É também a primeira página a ser apresentada ao usuário.<br>
