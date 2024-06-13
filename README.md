@@ -1,5 +1,5 @@
-### Grupo: Heitor, Sinico, Rafael
-### Foco: Controlar os ambiente, gestão de ambientes
+# Grupo: Heitor, Sinico, Rafael
+# Foco: Controlar os ambiente, gestão de ambientes
 
 ---
 
@@ -18,6 +18,15 @@
   <li>Itens consumiveis</li>
   <li>Separar por setor os itens consumiveis</li>
 </ul>
+
+
+---
+ 
+## 🛠 Linguagem Trabalhada
+  * Spring Boot | 🍃
+  
+
+---
 
 
 ## Modelo Conceitual:
@@ -110,9 +119,6 @@
   Method Put:
 ![Modelo de Negócios](requisitions_api_images/transferencia/put-transferencia.png)
 
-  Method Delete:
-![Modelo de Negócios](requisitions_api_images/transferencia/delete-transferencia.png)
-
 ---
 ### Patrimônios
 
@@ -144,6 +150,19 @@ Paginas
 | Cor exemplo       | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
 | Cor exemplo       | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
 | Cor exemplo       | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
+
+
+---
+## Autores
+
+- [@hunter7210](https://www.github.com/hunter7210)
+
+- [@rafaelmoura23](https://www.github.com/rafaelmoura23)
+
+- [@Edu1Sinico](https://www.github.com/Edu1Sinico)
+
+
+
 
 
 
