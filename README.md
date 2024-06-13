@@ -25,7 +25,7 @@ Login:<br>
 
 Efeito de Carregamento:
 ![efeito-carregamento](front-images/tela-de-carregamento.png)
-<br>
+<br><br>
 Página Home:
 ![página-home](front-images/pag-home.png)
 
