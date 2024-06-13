@@ -2,6 +2,9 @@
   <h1> Gestão de Patrimônios e Estoque 🎯🛠🔧⚙  </h1>
 </div> 
 
+<div align=center> 
+</div> 
+
 ---
 
 ### Objetivos:
@@ -24,15 +27,21 @@
 ---
  
 ## 🛠 Linguagem
-  * Spring Boot: O Spring Boot é um framework `Java` que simplifica o desenvolvimento de aplicativos, enquanto o `JPA` oferece uma maneira fácil de acessar e manipular dados em bancos de dados relacionais, facilitando o desenvolvimento de aplicativos.
+- **Spring Boot**: O Spring Boot é um framework `Java` que simplifica o desenvolvimento de aplicativos, enquanto o `JPA` oferece uma maneira fácil de acessar e manipular dados em bancos de dados relacionais, facilitando o desenvolvimento de aplicativos.
+- ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+- ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-%23005C0F.svg?style=for-the-badge&logo=Thymeleaf&logoColor=white)
   
 
 ---
+<details><summary>
+  
+<h2> Modelo Conceitual: </h2>
 
-
-## Modelo Conceitual:
+</summary>
 
 ![Modelo de Negócios](/image-database.png)
+</details>
+
 
 
 ## Utilização de API
