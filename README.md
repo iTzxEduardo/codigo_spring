@@ -1,5 +1,6 @@
-# Grupo: Heitor, Sinico, Rafael
-# Foco: Controlar os ambiente, gestão de ambientes
+<div align=center> 
+  <h1> Gestão de Patrimônios e Estoque 🎯🛠🔧⚙  </h1>
+</div> 
 
 ---
 
@@ -22,8 +23,8 @@
 
 ---
  
-## 🛠 Linguagem Trabalhada
-  * Spring Boot | 🍃
+## 🛠 Linguagem
+  * Spring Boot: O Spring Boot é um framework `Java` que simplifica o desenvolvimento de aplicativos, enquanto o `JPA` oferece uma maneira fácil de acessar e manipular dados em bancos de dados relacionais, facilitando o desenvolvimento de aplicativos.
   
 
 ---
@@ -86,9 +87,6 @@
   Method Put:
 ![Modelo de Negócios](requisitions_api_images/cargos/put-cargos.png)
 
-  Method Delete:
-![Modelo de Negócios](requisitions_api_images/cargos/delete-cargos.png)
-
 ---
 ### Estoque
 
@@ -124,9 +122,6 @@
 
   Method Put:
 ![Modelo de Negócios](requisitions_api_images/patrimonios/put-patrimonios.png)
-
-  Method Delete:
-![Modelo de Negócios](requisitions_api_images/patrimonios/delete-patrimonios.png)
 
 ---
 ## FrontEnd 
