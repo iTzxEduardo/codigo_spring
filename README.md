@@ -10,9 +10,9 @@ Responsável pelo Front-End:
 Figma:<br>
 ![página-do-figma](front-images/figma.png)
 
-# Implementação e Construção do layout Site:
-
 <hr>
+
+# Implementação e Construção do layout Site:
 
 ## Página de Login:
 
