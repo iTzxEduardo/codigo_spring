@@ -19,10 +19,44 @@ Figma:<br>
 A primeira página a ser construída, foi a página de Login. É também a primeira página a ser apresentada ao usuário.<br>
 
 Login:<br>
-![página-do-figma](front-images/login.png)
+![página-login](front-images/login.png)
 
 ## Página Home:
 
 Efeito de Carregamento:
+![efeito-carregamento](front-images/tela-de-carregamento.png)
+<br>
+Página Home:
+![página-home](front-images/pag-home.png)
 
-
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
+![]()
