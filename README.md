@@ -1,5 +1,5 @@
 <div align=center> 
-  <h1> Gestão de Patrimônios e Estoque 🎯🛠🔧⚙  </h1>
+  <h1> ⚙🛠🎯 Gestão de Patrimônios e Estoque 🎯🛠⚙  </h1>
 </div> 
 
 ## Visão Geral do Projeto
