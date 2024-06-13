@@ -19,16 +19,18 @@
   <li>Separar por setor os itens consumiveis</li>
 </ul>
 
+
 ## Modelo Conceitual:
 
-![Modelo de Negócios](requisitions_api_images/areas.png)
+![Modelo de Negócios](/image-database.png)
+
 
 ## Utilização de API
 ---
 ### Responsaveis
 
   Method Get:
-![Modelo de Negócios](requisitions_api_images/responsaveis/get-responsaveis.png)
+![Get-Responsaveis](requisitions_api_images/responsaveis/get-responsaveis.png)
 
   Method Post:
 ![Modelo de Negócios](requisitions_api_images/responsaveis/post-responsaveis.png)
@@ -96,9 +98,6 @@
   Method Put:
 ![Modelo de Negócios](requisitions_api_images/estoque/put-estoque.png)
 
-  Method Delete:
-![Modelo de Negócios](requisitions_api_images/estoque/delete-estoque.png)
-
 ---
 ### Transferências
 
@@ -130,6 +129,10 @@
 ![Modelo de Negócios](requisitions_api_images/patrimonio/delete-patrimonio.png)
 
 ---
+## FrontEnd 
+
+Paginas
+![](requisitions_api_images/patrimonio/delete-patrimonio.png)
 
 
 ---
