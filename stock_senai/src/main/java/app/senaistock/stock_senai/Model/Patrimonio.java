@@ -13,7 +13,7 @@ import lombok.Setter;
 public class Patrimonio implements Serializable{
     // Atibutos
     @Id
-    private int id_patrimonio;
+    private Long id_patrimonio;
     private String status_patrimonio;
     private String nome_patrimonio;
 

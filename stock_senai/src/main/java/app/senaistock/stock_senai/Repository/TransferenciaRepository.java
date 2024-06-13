@@ -6,7 +6,6 @@ import app.senaistock.stock_senai.Model.Transferencia;
 
 public interface TransferenciaRepository extends CrudRepository<Transferencia, Integer>{
     // Transferencia findById_tranferencia(int id_tranferencia);
-    
 }
 
 
