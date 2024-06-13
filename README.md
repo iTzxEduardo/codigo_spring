@@ -2,12 +2,11 @@
   <h1> Gestão de Patrimônios e Estoque 🎯🛠🔧⚙  </h1>
 </div> 
 
-<div align=center> 
-</div> 
+## [Plano de Negócios](https://github.com/senai-stock/stock_project/blob/main/plano%20de%20neg%C3%B3cios.txt)
 
 ---
 
-### Objetivos:
+## Objetivos:
 <ul>
   <li>Patrimônio dividido por sala</li>
   <li>Os objetos dentro da sala pertencem ao patrimônio da sala</li>
@@ -23,8 +22,6 @@
   <li>Separar por setor os itens consumiveis</li>
 </ul>
 
-
----
  
 ## 🛠 Linguagem
 - **Spring Boot**: O Spring Boot é um framework `Java` que simplifica o desenvolvimento de aplicativos, enquanto o `JPA` oferece uma maneira fácil de acessar e manipular dados em bancos de dados relacionais, facilitando o desenvolvimento de aplicativos.
@@ -136,9 +133,13 @@
 ![Modelo de Negócios](requisitions_api_images/patrimonios/put-patrimonios.png)
 
 </details>
+
 ---
 
 ## FrontEnd 
+
+- [Pasta com Imagens](https://github.com/senai-stock/stock_project/tree/main/front-images)
+- [Imagens FrontEnd](https://github.com/senai-stock/codigo_spring/blob/FrontEnd-Edu/README.md)
 
 
 
@@ -150,12 +151,3 @@
 - [@rafaelmoura23](https://www.github.com/rafaelmoura23)
 
 - [@Edu1Sinico](https://www.github.com/Edu1Sinico)
-
-
-
-
-
-
-
-
-  
