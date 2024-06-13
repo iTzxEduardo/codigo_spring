@@ -77,9 +77,6 @@
   Method Put:
 ![Modelo de Negócios](requisitions_api_images/areas/put-areas.png)
 
-  Method Delete:
-![Modelo de Negócios](requisitions_api_images/areas/delete-areas.png)
-
 ---
 ### Cargos
 
@@ -111,7 +108,7 @@
 ### Transferências
 
   Method Get:
-![Modelo de Negócios](requisitions_api_images/transferencia/get-transferencia.png)
+![Modelo de Negócios](requisitions_api_images/transferencias/get-transferencia.png)
 
   Method Post:
 ![Modelo de Negócios](requisitions_api_images/transferencia/post-transferencia.png)
@@ -123,16 +120,16 @@
 ### Patrimônios
 
   Method Get:
-![Modelo de Negócios](requisitions_api_images/patrimonio/get-patrimonio.png)
+![Modelo de Negócios](requisitions_api_images/patrimonios/get-patrimonios.png)
 
   Method Post:
-![Modelo de Negócios](requisitions_api_images/patrimonio/post-patrimonio.png)
+![Modelo de Negócios](requisitions_api_images/patrimonios/post-patrimonios.png)
 
   Method Put:
-![Modelo de Negócios](requisitions_api_images/patrimonio/put-patrimonio.png)
+![Modelo de Negócios](requisitions_api_images/patrimonios/put-patrimonios.png)
 
   Method Delete:
-![Modelo de Negócios](requisitions_api_images/patrimonio/delete-patrimonio.png)
+![Modelo de Negócios](requisitions_api_images/patrimonios/delete-patrimonios.png)
 
 ---
 ## FrontEnd 
