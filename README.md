@@ -2,9 +2,12 @@
   <h1> Gestão de Patrimônios e Estoque 🎯🛠🔧⚙  </h1>
 </div> 
 
+## Visão Geral do Projeto
+
+O projeto Senai-Stock foi desenvolvido com o objetivo de criar um sistema de controle de estoque e patrimônio para uma escola, dividido entre patrimônio e itens consumíveis. O sistema permite a gestão eficiente de recursos, associando cada item a uma sala específica e designando um responsável por cada sala. Também facilita a verificação periódica e o registro de transferências e manutenção de patrimônio.
+
 ## [Plano de Negócios](https://github.com/senai-stock/stock_project/blob/main/plano%20de%20neg%C3%B3cios.txt)
 
----
 
 ## Objetivos:
 <ul>
@@ -140,7 +143,10 @@
 - [Pasta com Imagens](https://github.com/senai-stock/stock_project/tree/main/front-images)
 - [Imagens FrontEnd](https://github.com/senai-stock/codigo_spring/blob/FrontEnd-Edu/README.md)
 
+---
 
+## Conclusão
+A experiência de criar o projeto Senai-Stock foi enriquecedora, pois envolveu a aplicação de várias tecnologias e práticas de desenvolvimento em um cenário prático. Desde a definição do modelo de dados até a implementação de serviços e controladores, cada etapa contribuiu para a construção de um sistema completo e funcional. O resultado final é uma aplicação robusta que atende aos requisitos do controle de patrimônio e estoque de uma escola, facilitando a gestão e o rastreamento de recursos de maneira eficiente.
 
 ---
 ## Autores
