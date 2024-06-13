@@ -5,17 +5,16 @@ Responsável pelo Front-End:
 
 ## Construção do Layout:
 
-Figma:
+Figma:<br>
 ![página-do-figma](front-images/figma.png)
 
 # Implementação e Construção do layout Site:
 
 ## Página de Login:
 
-A primeira página a ser construída, foi a página de Login.<br>
-É também a primeira página a ser apresentada ao usuário.
+A primeira página a ser construída, foi a página de Login. É também a primeira página a ser apresentada ao usuário.<br>
 
-Login:
+Login:<br>
 ![página-do-figma](front-images/login.png)
 
 ## Página Home:
