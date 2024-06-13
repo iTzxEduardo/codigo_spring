@@ -1,6 +1,6 @@
-## Front-End
+# Front-End
 
-# Construção do Layout:
+## Construção do Layout:
 
 Figma:
 ![página-do-figma](front-images/figma.png)
