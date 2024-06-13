@@ -3,6 +3,7 @@
 Responsável pelo Front-End:
 - Eduardo Sinico
 
+<hr>
 ## Construção do Layout:
 
 Figma:<br>
