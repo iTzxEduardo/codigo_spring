@@ -38,5 +38,3 @@ INSERT INTO patrimonio (id_patrimonio, data_registro_patrimonio, nome_patrimonio
 (1, '20/10/2023', 'Computador', 'Ativo', 1, 1, 1, 1),
 (2, '15/07/2022', 'Cadeira', 'Ativo', 2, 2, 2, 2),
 (3, '16/03/2024', 'Escada', 'Inativo', 2, 3, 2, 3);
-
-
