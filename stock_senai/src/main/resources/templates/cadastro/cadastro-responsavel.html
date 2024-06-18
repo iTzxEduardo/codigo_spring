@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org/">
 
@@ -5,6 +7,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Responsáveis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-T7wLp7LJ9d2zH62Ckdy5ZPb4Ci7FYuxF9y8WyzXoUnL0RcXlQc2L6rP6lQTha+V0cIs6CP7V2UZD7hKUtOXgNQ==">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .card-header h3 {
+            margin: 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .error-message {
+            display: none;
+            color: #dc3545;
+            font-size: 14px;
+        }
+
+        .btn-register {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-register:hover {
+            background-color: #218838;
+        }
+
+        .justify-content-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .register-container {
+            margin-top: 20px;
+        }
+
+        #foto {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,38 +108,43 @@
                         <div class="card-body">
                             <form action="/cadastro-responsavel" method="POST">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email" name="email">
-                                    <span class="error-message" style="display: none;">Insira o Email</span>
+                                    <input type="text" class="form-control" placeholder="Email" name="email" required>
+                                    <span class="error-message">Insira o Email</span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nome" name="nome_responsavel">
-                                    <span class="error-message" style="display: none;">Digite o Nome</span>
+                                    <input type="text" class="form-control" placeholder="Nome" name="nome_responsavel"
+                                        required>
+                                    <span class="error-message">Digite o Nome</span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Senha" name="senha">
-                                    <span class="error-message" style="display: none;">Informe a Senha</span>
+                                    <input type="password" class="form-control" placeholder="Senha" name="senha"
+                                        required>
+                                    <span class="error-message">Informe a Senha</span>
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control" name="id_cargo">
+                                    <select class="form-control" name="id_cargo" required>
                                         <option value="" disabled selected>Selecione um cargo</option>
-                                        <option th:each="cargo : ${cargos}" th:value="${cargo.id}" th:text="${cargo.nome_cargo}"></option>
+                                        <option th:each="cargo : ${cargos}" th:value="${cargo.id}"
+                                            th:text="${cargo.nome_cargo}"></option>
                                     </select>
-                                    <span class="error-message" style="display: none;">Insira um cargo</span>
+                                    <span class="error-message">Selecione um cargo</span>
                                 </div>
 
                                 <div class="form-group">
-                                    <select class="form-control" name="idsala">
+                                    <select class="form-control" name="idsala" required>
                                         <option value="" disabled selected>Selecione uma sala</option>
-                                        <option th:each="sala : ${salas}" th:value="${sala.id_sala}" th:text="${sala.nome_sala}"></option>
+                                        <option th:each="sala : ${salas}" th:value="${sala.id_sala}"
+                                            th:text="${sala.nome_sala}"></option>
                                     </select>
-                                    <span class="error-message" style="display: none;">Insira uma Sala</span>
+                                    <span class="error-message">Selecione uma Sala</span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="foto">Selecionar Foto:</label>
                                     <input type="file" id="foto" name="foto" accept="image/*">
-                                </div>                                
-                                <button type="submit" class="btn btn-block btn-register"><i class="fas fa-user-plus"></i>Cadastrar</button>
+                                </div>
+                                <button type="submit" class="btn btn-block btn-register"><i
+                                        class="fas fa-user-plus"></i> Cadastrar</button>
                             </form>
                         </div>
                     </div>
@@ -63,4 +153,5 @@
         </div>
     </div>
 </body>
+
 </html>

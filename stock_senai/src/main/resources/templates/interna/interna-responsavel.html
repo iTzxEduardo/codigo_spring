@@ -1,12 +1,115 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-</html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Responsável</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .welcome, .cargo {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .welcome h2, .cargo h2 {
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .logout {
+            background-color: #d9534f;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .logout i {
+            margin-right: 5px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        nav {
+            background-color: #333;
+            border-radius: 5px;
+            margin: 10px auto;
+            max-width: 600px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .fas {
+            margin-right: 5px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin: 10px auto;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #45a049;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,30 +129,36 @@
         <button type="submit" class="logout"><i class="fas fa-sign-out-alt"></i>Logout</button>
     </form>
 
-        <img th:src="${foto}">
-        <span th:text="${foto}"></span>
-    
+    <img th:src="${foto}" alt="User Photo">
+    <span th:text="${foto}"></span>
+
     <a href="/cadastro-responsavel">Cadastrar Responsável</a>
-    <img src="../interna/img/mario_teste.png" alt="mario">
+    <img src="../interna/img/mario_teste.png" alt="Mario">
 
     <nav>
-        <a href="salas-responsaveis"><i class="fas fa-list"> </i>Salas</a>
+        <a href="salas-responsaveis"><i class="fas fa-list"></i>Salas</a>
     </nav>
 
     <nav>
-        <a href="listar-blocos"><i class="fas fa-list"> </i>Blocos</a>
+        <a href="listar-blocos"><i class="fas fa-list"></i>Blocos</a>
     </nav>
 
     <nav>
-        <a href="listar-patrimonios"><i class="fas fa-list"> </i>Patrimônios</a>
+        <a href="listar-patrimonios"><i class="fas fa-list"></i>Patrimônios</a>
     </nav>
 
     <nav>
-        <a href="listar-estoques"><i class="fas fa-list"> </i>Estoque</a>
+        <a href="listar-estoques"><i class="fas fa-list"></i>Estoque</a>
     </nav>
 
-    <a href="/interna-adm">ADM</a>
-
+    <form action="/cadastro-estoque" method="post">
+        <!-- Seus campos de formulário aqui -->
+        <button type="submit">Submit</button>
+    </form>
+      
+    <div class="footer">
+        <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p>
+    </div>
 </body>
 
 </html>
